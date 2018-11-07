@@ -1,0 +1,48 @@
+[debug] [2018-11-07T04:38:12.308Z] ----------------------------------------------------------------------
+[debug] [2018-11-07T04:38:12.312Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\exper\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2018-11-07T04:38:12.312Z] CLI Version:   6.0.1
+[debug] [2018-11-07T04:38:12.312Z] Platform:      win32
+[debug] [2018-11-07T04:38:12.312Z] Node Version:  v10.12.0
+[debug] [2018-11-07T04:38:12.314Z] Time:          Tue Nov 06 2018 23:38:12 GMT-0500 (Eastern Standard Time)
+[debug] [2018-11-07T04:38:12.314Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-07T04:38:12.327Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-07T04:38:12.328Z] > authorizing via signed-in user
+[debug] [2018-11-07T04:38:12.328Z] [iam] checking project data-and-trend for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-11-07T04:38:12.331Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/data-and-trend:testIamPermissions  
+
+[debug] [2018-11-07T04:38:12.772Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T04:38:12.774Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/data-and-trend  
+ 
+[debug] [2018-11-07T04:38:13.006Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'data-and-trend'...
+[info] 
+[info] i  deploying hosting
+[debug] [2018-11-07T04:38:13.012Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/data-and-trend/versions  
+
+[debug] [2018-11-07T04:38:13.671Z] <<< HTTP RESPONSE 200
+[info] i  hosting[data-and-trend]: beginning deploy...
+[info] i  hosting[data-and-trend]: found 1476 files in public
+[debug] [2018-11-07T04:38:13.991Z] [hosting] hash cache [cHVibGlj] load error: lines is not defined
+[debug] [2018-11-07T04:38:14.821Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/data-and-trend/versions/fadcc408e183360e:populateFiles  
+ <request body omitted>
+[debug] [2018-11-07T04:38:15.306Z] [hosting] hash cache [cHVibGlj] stored for 1476 files
+[debug] [2018-11-07T04:38:15.306Z] [hosting][hash queue][FINAL]
+[debug] [2018-11-07T04:38:15.306Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/data-and-trend/versions/fadcc408e183360e:populateFiles  
+ <request body omitted>
+[debug] [2018-11-07T04:38:16.918Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T04:38:17.374Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-07T04:38:17.376Z] [hosting][populate queue][FINAL]
+[debug] [2018-11-07T04:38:17.376Z] [hosting] uploads queued: 1
+[debug] [2018-11-07T04:38:28.814Z] [uploadQueue] Retrying task 39d00e67d43dbcfd014b59f2e0237159f78ed258d7199a623aa26af0b44d9480
+[debug] [2018-11-07T04:38:40.655Z] [uploadQueue] Retrying task 39d00e67d43dbcfd014b59f2e0237159f78ed258d7199a623aa26af0b44d9480
+[debug] [2018-11-07T04:38:53.292Z] [uploadQueue] Retrying task 39d00e67d43dbcfd014b59f2e0237159f78ed258d7199a623aa26af0b44d9480
+[debug] [2018-11-07T04:39:07.529Z] [uploadQueue] Retrying task 39d00e67d43dbcfd014b59f2e0237159f78ed258d7199a623aa26af0b44d9480
+[debug] [2018-11-07T04:39:13.932Z] [uploadQueue] Retrying task 39d00e67d43dbcfd014b59f2e0237159f78ed258d7199a623aa26af0b44d9480
+[debug] [2018-11-07T04:39:13.934Z] [uploadQueue] Retries exhausted for task 39d00e67d43dbcfd014b59f2e0237159f78ed258d7199a623aa26af0b44d9480 :
+[debug] [2018-11-07T04:39:13.935Z] [hosting][upload queue][FINAL]
+[debug] [2018-11-07T04:39:13.944Z] Error: getaddrinfo ENOTFOUND upload-firebasehosting.googleapis.com upload-firebasehosting.googleapis.com:443
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:57:26)
+[error] 
+[error] Error: An unexpected error has occurred.
