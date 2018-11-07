@@ -9,7 +9,7 @@ self.addEventListener('install', function (event) {
           '/src/js/app.js',
           '/src/js/grayscale.js',
           '/src/js/main.min.js',
-          
+
           '/src/img/hero.jpg',
           '/src/img/intro.jpg',
           '/src/img/logo-ocha.png',
@@ -18,15 +18,15 @@ self.addEventListener('install', function (event) {
           '/src/img/thumbnail-image-01.jpg',
           '/src/img/thumbnail-image-02.jpg',
 
-          'src/vendor/bootstrap/css/bootstrap.min.css',
-          'src/vendor/fontawesome-free/css/all.min.css',
+          '/src/vendor/bootstrap/css/bootstrap.min.css',
+          '/src/vendor/fontawesome-free/css/all.min.css',
 
-          'src/css/style.css',
+          '/src/css/style.css',
 
-          'src/vendor/jquery/jquery.min.js',
-          'src/vendor/bootstrap/js/bootstrap.bundle.min.js',
-          'src/vendor/jquery-easing/jquery.easing.min.js',
-          'src/js/main.min.js',     
+          '/src/vendor/jquery/jquery.min.js',
+          '/src/vendor/bootstrap/js/bootstrap.bundle.min.js',
+          '/src/vendor/jquery-easing/jquery.easing.min.js',
+          '/src/js/main.min.js',     
           '/src/js/app.js',     
 
           'https://fonts.googleapis.com/css?family=Varela+Round',
