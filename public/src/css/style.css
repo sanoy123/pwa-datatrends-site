@@ -67,13 +67,13 @@
   top: 5px;
 }
 
-.BigCloud {
+.cloude {
   position: relative;
   bottom: -90px;
   width: 100%; 
   transition: opacity 0.5s;
 }
-.BigCloud img {
+.cloude img {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -166,7 +166,7 @@
   }
 }
 
-.masthead {
+.header {
   position: relative;
   width: 100%;
   height: auto;
@@ -180,7 +180,7 @@
   background-size: cover;
 }
 
-.masthead h1 {
+.header h1 {
   font-family: 'Varela Round';
   font-size: 1.5rem;
   line-height: 1.5rem;
@@ -190,29 +190,29 @@
   -webkit-background-clip: text;
 }
 
-.masthead h2 {
+.header h2 {
   max-width: 20rem;
   font-size: 1rem;
 }
 
 @media (min-width: 768px) {
-  .masthead h1 {
+  .header h1 {
     font-size: 4rem;
     line-height: 4rem;
   }
 }
 
 @media (min-width: 992px) {
-  .masthead {
+  .header {
     height: 100vh;
     padding: 0;
   }
-  .masthead h1 {
+  .header h1 {
     font-size: 6.5rem;
     line-height: 6.5rem;
     letter-spacing: 0.8rem;
   }
-  .masthead h2 {
+  .header h2 {
     max-width: 30rem;
     font-size: 1.25rem;
   }
@@ -246,47 +246,47 @@
   background-color: #FA575C !important;
 }
 
-.about-section {
+.introduction-section {
   padding-top: 10rem;
   background: #fff;
 }
 
-.about-section p {
+.introduction-section p {
   margin-bottom: 5rem;
 }
 
-.projects-section {
+.impact-protracted-crisis-section {
   padding: 10rem 0;
 }
 
-.projects-section .featured-text {
+.impact-protracted-crisis-section .featured-text {
   padding: 2rem;
 }
 
 @media (min-width: 992px) {
-  .projects-section .featured-text {
+  .impact-protracted-crisis-section .featured-text {
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #FA575C;
   }
 }
 
-.projects-section .project-text {
+.impact-protracted-crisis-section .protracted-text {
   padding: 3rem;
   font-size: 90%;
 }
 
 @media (min-width: 992px) {
-  .projects-section .project-text {
+  .impact-protracted-crisis-section .protracted-text {
     padding: 5rem;
   }
-  .projects-section .project-text hr {
+  .impact-protracted-crisis-section .protracted-text hr {
     border-color: #FA575C;
     border-width: .25rem;
     width: 30%;
   }
 }
 
-.signup-section {
+.resources-section {
   padding: 10rem 0;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/resources.jpg");
   background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/resources.jpg");
@@ -296,7 +296,7 @@
   background-size: cover;
 }
 
-.signup-section .form-inline input {
+.resources-section .form-inline input {
   -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   padding: 1.25rem 2rem;
@@ -308,33 +308,33 @@
   border: 0;
 }
 
-.contact-section {
+.download-section {
   padding: 5rem 0 0;
 }
 
-.contact-section .card {
+.download-section .card {
   border: 0;
   border-bottom: 0.25rem solid #FA575C;
 }
 
-.contact-section .card h4 {
+.download-section .card h4 {
   font-size: 0.8rem;
   font-family: 'Varela Round';
   text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
 
-.contact-section .card hr {
+.download-section .card hr {
   border-color: #FA575C;
   border-width: 0.25rem;
   width: 3rem;
 }
 
-.contact-section .social {
+.download-section .social {
   margin-top: 5rem;
 }
 
-.contact-section .social a {
+.download-section .social a {
   text-align: center;
   height: 3rem;
   width: 3rem;
@@ -344,11 +344,11 @@
   color: #fff;
 }
 
-.contact-section .social a:hover {
+.download-section .social a:hover {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.contact-section .social a:active {
+.download-section .social a:active {
   color: #fff;
 }
 
