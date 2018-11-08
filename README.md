@@ -1,4 +1,5 @@
-"# pwa-datatrends-site" 
+"# Progressive Web App (with ServiceWorker)" 
+
 
 Installation
 
