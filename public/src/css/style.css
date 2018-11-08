@@ -36,7 +36,7 @@
 	/*  -webkit-filter: grayscale(100%); filter: grayscale(100%)*/
 
 }
-.accessible{
+.accessibility-button{
   position: fixed;
   top: 10px;
   right: 20px;
@@ -46,7 +46,7 @@
   height: 50px;
 
 }
-.accessible i {
+.accessibility-button i {
   color: #fff;
   margin: 0;
   position: relative;
@@ -59,21 +59,21 @@
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.accessible:hover {
+.accessibility-button:hover {
   background: rgba(0, 0, 0, 0.9);
 }
-.accessible:hover i {
+.accessibility-button:hover i {
   color: #fff;
   top: 5px;
 }
 
-.cloude {
+.bottom-cloud {
   position: relative;
   bottom: -90px;
   width: 100%; 
   transition: opacity 0.5s;
 }
-.cloude img {
+.bottom-cloud img {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -288,24 +288,12 @@
 
 .resources-section {
   padding: 10rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(22, 22, 22, 0.5)), to(#161616)), url("../img/resources.jpg");
-  background: linear-gradient(to bottom, rgba(22, 22, 22, 0.1) 0%, rgba(22, 22, 22, 0.5) 75%, #161616 100%), url("../img/resources.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(250, 87, 92, 0.5)), to(#FA575C)), url("../img/resources.jpg");
+  background: linear-gradient(to bottom, rgba(250, 87, 92, 0.1) 0%, rgba(250, 87, 92, 0.5) 75%, #FA575C 100%), url("../img/resources.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
-}
-
-.resources-section .form-inline input {
-  -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
-  height: auto;
-  font-family: 'Varela Round';
-  font-size: 80%;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  border: 0;
 }
 
 .download-section {
@@ -345,11 +333,20 @@
 }
 
 .download-section .social a:hover {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(207, 53, 53);
 }
 
 .download-section .social a:active {
   color: #fff;
+}
+
+
+.protracted-section {
+  padding: 5rem 0 0;
+}
+
+.improve-humanitarian-action{
+  padding: 5rem 0 0;
 }
 
 body {
@@ -368,6 +365,10 @@ a:focus, a:hover {
 
 .bg-black {
   background-color: #161616 !important;
+}
+
+.bg-whdt {
+  background-color: #FA575C !important;
 }
 
 .bg-primary {
