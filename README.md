@@ -1,1 +1,7 @@
 "# pwa-datatrends-site" 
+
+Installation
+
+1. Install node (https://nodejs.org/en/)
+2. Use command 'npm install' to install dependencies: like http-server
+3. Run npm start
