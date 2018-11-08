@@ -32,10 +32,8 @@ ol,ul {
 .cb-slideshow li div {
   /*  z-index: 1000; */
     position: absolute;
-    top: 15%;
-    left: 10%;
-    width: 100%;
-    text-align: left;
+    
+    text-align: center;
 
 
 }
