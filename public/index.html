@@ -46,7 +46,7 @@
               <a class="nav-link js-scroll-trigger" href="#resources">Resources</a>
             </li>
           </ul>
-          <a href="#" class="accessibility-button">
+          <a class="accessibility-button" data-toggle="modal" data-target="#accessibility">
               <i class="fas fa-wheelchair"></i>
             </a>
         </div>
@@ -476,7 +476,7 @@
     </section>
 
   
-<!-- Modal -->
+<!-- Past Reports Modal -->
 <div class="modal fade" id="pastReports" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -503,6 +503,32 @@
     </div>
   </div>
 </div>
+<!-- Accessibility Modal -->
+<div class="modal fade" id="accessibility" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Accessibility Options</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <ul class="list-group">
+            <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> High Contrast &nbsp; &nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> Normal Contrast</li>
+            <li class="list-group-item"><i class="fas fa-link text-primary"></i> Yellow Links &nbsp; &nbsp;&nbsp;<i class="fas fa-link"></i>Normal Links</i></li>
+            <li class="list-group-item"><i class="fas fa fa-barcode text-primary" aria-hidden="true"></i> Grayscale Mode &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> Regular Mode</li>
+            <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> Underline Links &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> Underline Links</li>
+
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>        
+        </div>
+      </div>
+    </div>
+  </div>
  
 
     <!-- Bootstrap core JavaScript -->
@@ -548,19 +574,9 @@
    
      </script>
      <script>
- 
-                    // Detects if device is on iOS 
-            const isIos = () => {
-            const userAgent = window.navigator.userAgent.toLowerCase();
-            return /iphone|ipad|ipod/.test( userAgent );
-            }
-            // Detects if device is in standalone mode
-            const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
-            // Checks if should display install popup notification:
-            if (isIos() && !isInStandaloneMode()) {
-            this.setState({ showInstallMessage: true });
-            }
+        $('.popover-dismiss').popover({
+          trigger: 'focus'
+        });
               
      </script>
 
