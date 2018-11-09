@@ -81,7 +81,15 @@
 
 }
 
-
+.scroll-fade-content{
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+.scroll-fade-content.fade-in{
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 
@@ -260,27 +268,66 @@
   background: #fff;
   
 }
-.scroll-fade-content{
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease-out;
-}
-.scroll-fade-content.fade-in{
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .introduction-section p {
   margin-bottom: 5rem;
 }
 
-.impact-protracted-crisis-section {
-  padding: 10rem 0;
+.protracted-crisis-section {
+  padding-top: 10rem;
+  background: #fff;
+  
 }
 
-.impact-protracted-crisis-section .featured-text {
-  padding: 2rem;
+.protracted-crisis-section p {
+  margin-bottom: 5rem;
 }
+.protracted-crisis-section .btn {
+  margin-bottom: 5rem;
+}
+
+.hdx-graphics-section {
+  padding-top: 10rem;
+  background: #fff;
+  
+}
+
+.hdx-graphics-section p {
+  margin-bottom: 5rem;
+}
+
+
+
+.impact-protracted-crisis-section {
+  padding-top: 10rem;
+  background: #fff;
+}
+
+.impact-protracted-crisis-section p {
+  margin-bottom: 5rem;
+}
+
+.attack-on-education-section {
+  padding-top: 10rem;
+  background: #fff;
+
+}
+
+.attack-on-education-section p {
+  margin-bottom: 5rem;
+}
+
+.opportunity-for-improve-section {
+  padding-top: 10rem;
+  background: #fff;
+
+}
+
+.opportunity-for-improve-section p {
+  margin-bottom: 5rem;
+}
+
+
 
 @media (min-width: 992px) {
   .impact-protracted-crisis-section .featured-text {
@@ -386,7 +433,9 @@ a:focus, a:hover {
 .bg-black {
   background-color: #161616 !important;
 }
-
+.bg-shade {
+  background-color: #F8F8F8 !important;
+}
 .bg-whdt {
   background-color: #FA575C !important;
 }
@@ -398,7 +447,13 @@ a:focus, a:hover {
 .text-primary {
   color: #FA575C !important;
 }
-
+.container-fluid{
+  padding-right:0;
+  padding-left:0;
+  margin-right:auto;
+  margin-left:auto;
+  overflow: hidden;
+}
 footer {
   padding: 5rem 0;
 }
