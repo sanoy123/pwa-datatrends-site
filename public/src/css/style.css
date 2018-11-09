@@ -319,11 +319,17 @@
 
 .opportunity-for-improve-section {
   padding-top: 10rem;
-  background: #fff;
-
-}
+ }
 
 .opportunity-for-improve-section p {
+  margin-bottom: 5rem;
+}
+
+.resources-section {
+  padding-top: 10rem;
+ }
+
+ .resources-section p {
   margin-bottom: 5rem;
 }
 
@@ -353,43 +359,43 @@
   
 }
 
-.resources-section {
+.footer-section {
+ 
   padding: 10rem 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.1)), color-stop(75%, rgba(250, 87, 92, 0.5)), to(#FA575C)), url("../img/resources.jpg");
-  background: linear-gradient(to bottom, rgba(250, 87, 92, 0.1) 0%, rgba(250, 87, 92, 0.5) 75%, #FA575C 100%), url("../img/resources.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-size: cover;
+  background-color: #363636;
+  color: rgb(255,255,255);
+  
+
+
 }
 
-.download-section {
+.resources-section {
   padding: 5rem 0 0;
 }
 
-.download-section .card {
+.resources-section .card {
   border: 0;
-  border-bottom: 0.25rem solid #FA575C;
+  
 }
 
-.download-section .card h4 {
+.resources-section .card h4 {
   font-size: 0.8rem;
   font-family: 'Varela Round';
   text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
 
-.download-section .card hr {
+.resources-section .card hr {
   border-color: #FA575C;
   border-width: 0.25rem;
   width: 3rem;
 }
 
-.download-section .social {
+.resources-section .social {
   margin-top: 5rem;
 }
 
-.download-section .social a {
+.resources-section .social a {
   text-align: center;
   height: 3rem;
   width: 3rem;
@@ -399,11 +405,11 @@
   color: #FA575C;
 }
 
-.download-section .social a:hover {
+.resources-section .social a:hover {
   color: rgba(207, 53, 53);
 }
 
-.download-section .social a:active {
+.resources-section .social a:active {
   color: #fff;
 }
 
