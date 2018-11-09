@@ -364,6 +364,7 @@
   padding: 10rem 0;
   background-color: #363636;
   color: rgb(255,255,255);
+  margin-top: 40px;
   
 
 
@@ -374,10 +375,36 @@
 }
 
 .resources-section .card {
-  border: 0;
+  background: #FAFAFA;
+
+  position: relative;
+ 
+  
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
   
 }
-
+.resources-section .card:hover{
+  background: linear-gradient(to right, #FA575C17 0%, #FA575C2b 51%, #FA575C36 100%);
+}
+.resources-section .card:after{
+  display: block;
+            background: #2196F3;
+            border-top: 2px solid #FA575C;
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+}
 .resources-section .card h4 {
   font-size: 0.8rem;
   font-family: 'Varela Round';
@@ -391,11 +418,11 @@
   width: 3rem;
 }
 
-.resources-section .social {
+.footer-section .social {
   margin-top: 5rem;
 }
 
-.resources-section .social a {
+.footer-section .social a {
   text-align: center;
   height: 3rem;
   width: 3rem;
@@ -405,11 +432,11 @@
   color: #FA575C;
 }
 
-.resources-section .social a:hover {
+.footer-section .social a:hover {
   color: rgba(207, 53, 53);
 }
 
-.resources-section .social a:active {
+.footer-section .social a:active {
   color: #fff;
 }
 
