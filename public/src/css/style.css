@@ -61,7 +61,7 @@
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
- 
+
 }
 
 .accessibility-button:hover {
@@ -234,7 +234,23 @@
     line-height: 4rem;
   }
 
+  .bottom-cloud {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    transition: opacity 0.5s;
+  }
 
+
+}
+
+@media (min-width: 576px) {
+  .bottom-cloud {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    transition: opacity 0.5s;
+  }
 }
 
 @media (min-width: 992px) {
@@ -501,6 +517,7 @@ a:hover {
   margin-left: auto;
   overflow: hidden;
 }
+
 footer {
   padding: 5rem 0;
 }
