@@ -234,24 +234,12 @@
     line-height: 4rem;
   }
 
-  .bottom-cloud {
-    position: relative;
-    bottom: 0px;
-    width: 100%;
-    transition: opacity 0.5s;
-  }
+
 
 
 }
 
-@media (min-width: 576px) {
-  .bottom-cloud {
-    position: relative;
-    bottom: 0px;
-    width: 100%;
-    transition: opacity 0.5s;
-  }
-}
+
 
 @media (min-width: 992px) {
   .header {
