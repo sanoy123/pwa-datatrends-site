@@ -20,7 +20,7 @@
   <link rel="manifest" href="/manifest.json">
 </head>
 
-<body id="page-top">
+<body id="body">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -497,14 +497,14 @@
         <div class="modal-body">
 
           <ul class="list-group">
-            <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> High Contrast &nbsp;
-              &nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> Normal Contrast</li>
-            <li class="list-group-item"><i class="fas fa-link text-primary"></i> Yellow Links &nbsp; &nbsp;&nbsp;<i
-                class="fas fa-link"></i> Normal Links</i></li>
-            <li class="list-group-item"><i class="fas fa fa-barcode text-primary" aria-hidden="true"></i> Grayscale
-              Mode &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> Regular Mode</li>
-            <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> Underline
-              Links &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> Underline Links</li>
+            <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> <a id="btnHighContrast">High Contrast</a> &nbsp;
+              &nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> <a id="btnNormalContrast">Normal Contrast</a></li>
+            <li class="list-group-item"><i class="fas fa-link text-primary"></i> <a id="btnYellowLinks">Yellow Links</a> &nbsp; &nbsp;&nbsp;<i
+                class="fas fa-link"></i> <a id="btnNormalLinks">Normal Links</a></i></li>
+            <li class="list-group-item"><i class="fas fa fa-barcode text-primary" aria-hidden="true"></i> <a id="btnGreyScale">Grayscale
+              Mode</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> <a id="btnRegularColor">Regular Mode</a></li>
+            <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> <a id="btnUnderline">Underline
+              Links</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> <a id="btnDefault">Default Links</a></li>
 
           </ul>
         </div>
@@ -559,9 +559,54 @@
 
   </script>
   <script>
-    $('.popover-dismiss').popover({
-      trigger: 'focus'
+    document.getElementById('btnHighContrast').addEventListener('click', function () {
+      
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "src/css/high-contrast.css",
+        title: "underline"
+      }).appendTo("head");
+
+
     });
+    document.getElementById('btnYellowLinks').addEventListener('click', function () {
+        $("<link/>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "src/css/yellow-links.css",
+          title: "underline"
+        }).appendTo("head");
+      });
+      document.getElementById('btnUnderline').addEventListener('click', function () {
+        $("<link/>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "src/css/underline-links.css",
+          title: "underline"
+        }).appendTo("head");
+      });
+      document.getElementById('btnDefault').addEventListener('click', function () {
+        $("LINK[href*='src/css/underline-links.css']").remove();
+      });
+      document.getElementById('btnGreyScale').addEventListener('click', function () {
+        $("<link/>", {
+          rel: "stylesheet",
+          type: "text/css",
+          href: "src/css/greyscale.css",
+          title: "underline"
+        }).appendTo("head");
+      });
+      document.getElementById('btnRegularColor').addEventListener('click', function () {
+        $("LINK[href*='src/css/greyscale.css']").remove();
+        });
+
+        document.getElementById('btnNormalContrast').addEventListener('click', function () {
+          $("LINK[href*='src/css/high-contrast.css']").remove();
+        });
+        document.getElementById('btnNormalLinks').addEventListener('click', function () {
+          $("LINK[href*='css/yellow-links.css']").remove();
+        });
 
   </script>
 
