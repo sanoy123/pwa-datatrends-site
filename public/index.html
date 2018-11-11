@@ -249,7 +249,7 @@
                   <img class="img-fluid" src="src/img/thumbnail-image-03.jpg" alt="">
                 </div>
                 <div class="col-lg-6 order-lg-first">
-                  <div id="attack-education" class="carousel slide carousel-fade" data-ride="carousel">
+                  <div id="attack-education" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                       <li data-target="#attack-education" data-slide-to="0" class="active"></li>
                       <li data-target="#attack-education" data-slide-to="1"></li>
@@ -468,12 +468,18 @@
         <div class="modal-body">
 
           <ul class="list-group">
-            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2017.pdf" target="_blank">2017</a></li>
-            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2016.pdf" target="_blank">2016</a></li>
-            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2015.pdf" target="_blank">2015</a></li>
-            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2014.pdf" target="_blank">2014</a></li>
-            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2013.pdf" target="_blank">2013</a></li>
-            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2012.pdf" target="_blank">2012</a></li>
+            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2017.pdf"
+                target="_blank">2017</a></li>
+            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2016.pdf"
+                target="_blank">2016</a></li>
+            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2015.pdf"
+                target="_blank">2015</a></li>
+            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2014.pdf"
+                target="_blank">2014</a></li>
+            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2013.pdf"
+                target="_blank">2013</a></li>
+            <li class="list-group-item"><i class="fas fa-file-pdf text-primary mb-2"></i> <a href="src/reports/World_Humanitarian_Data_and_Trends_2012.pdf"
+                target="_blank">2012</a></li>
           </ul>
         </div>
         <div class="modal-footer">
@@ -497,14 +503,17 @@
         <div class="modal-body">
 
           <ul class="list-group">
-            <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> <a id="btnHighContrast">High Contrast</a> &nbsp;
+            <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> <a id="btnHighContrast">High
+                Contrast</a> &nbsp;
               &nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> <a id="btnNormalContrast">Normal Contrast</a></li>
-            <li class="list-group-item"><i class="fas fa-link text-primary"></i> <a id="btnYellowLinks">Yellow Links</a> &nbsp; &nbsp;&nbsp;<i
-                class="fas fa-link"></i> <a id="btnNormalLinks">Normal Links</a></i></li>
+            <li class="list-group-item"><i class="fas fa-link text-primary"></i> <a id="btnYellowLinks">Yellow Links</a>
+              &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-link"></i> <a id="btnNormalLinks">Normal Links</a></i></li>
             <li class="list-group-item"><i class="fas fa fa-barcode text-primary" aria-hidden="true"></i> <a id="btnGreyScale">Grayscale
-              Mode</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> <a id="btnRegularColor">Regular Mode</a></li>
+                Mode</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> <a id="btnRegularColor">Regular
+                Mode</a></li>
             <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> <a id="btnUnderline">Underline
-              Links</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> <a id="btnDefault">Default Links</a></li>
+                Links</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> <a id="btnDefault">Default
+                Links</a></li>
 
           </ul>
         </div>
@@ -558,9 +567,11 @@
     });
 
   </script>
+
+  <!-- Accessibility Script-->
   <script>
     document.getElementById('btnHighContrast').addEventListener('click', function () {
-      
+
       $("<link/>", {
         rel: "stylesheet",
         type: "text/css",
@@ -571,42 +582,42 @@
 
     });
     document.getElementById('btnYellowLinks').addEventListener('click', function () {
-        $("<link/>", {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "src/css/yellow-links.css",
-          title: "underline"
-        }).appendTo("head");
-      });
-      document.getElementById('btnUnderline').addEventListener('click', function () {
-        $("<link/>", {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "src/css/underline-links.css",
-          title: "underline"
-        }).appendTo("head");
-      });
-      document.getElementById('btnDefault').addEventListener('click', function () {
-        $("LINK[href*='src/css/underline-links.css']").remove();
-      });
-      document.getElementById('btnGreyScale').addEventListener('click', function () {
-        $("<link/>", {
-          rel: "stylesheet",
-          type: "text/css",
-          href: "src/css/greyscale.css",
-          title: "underline"
-        }).appendTo("head");
-      });
-      document.getElementById('btnRegularColor').addEventListener('click', function () {
-        $("LINK[href*='src/css/greyscale.css']").remove();
-        });
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "src/css/yellow-links.css",
+        title: "underline"
+      }).appendTo("head");
+    });
+    document.getElementById('btnUnderline').addEventListener('click', function () {
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "src/css/underline-links.css",
+        title: "underline"
+      }).appendTo("head");
+    });
+    document.getElementById('btnDefault').addEventListener('click', function () {
+      $("LINK[href*='src/css/underline-links.css']").remove();
+    });
+    document.getElementById('btnGreyScale').addEventListener('click', function () {
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "src/css/greyscale.css",
+        title: "underline"
+      }).appendTo("head");
+    });
+    document.getElementById('btnRegularColor').addEventListener('click', function () {
+      $("LINK[href*='src/css/greyscale.css']").remove();
+    });
 
-        document.getElementById('btnNormalContrast').addEventListener('click', function () {
-          $("LINK[href*='src/css/high-contrast.css']").remove();
-        });
-        document.getElementById('btnNormalLinks').addEventListener('click', function () {
-          $("LINK[href*='css/yellow-links.css']").remove();
-        });
+    document.getElementById('btnNormalContrast').addEventListener('click', function () {
+      $("LINK[href*='src/css/high-contrast.css']").remove();
+    });
+    document.getElementById('btnNormalLinks').addEventListener('click', function () {
+      $("LINK[href*='css/yellow-links.css']").remove();
+    });
 
   </script>
 
