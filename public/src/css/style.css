@@ -332,6 +332,15 @@
 .opportunity-for-improve-section p {
   margin-bottom: 5rem;
 }
+.opportunity-for-improve-section .big-photo{
+  margin-bottom: 5rem;
+}
+.opportunity-for-improve-section .big-photo p{
+  margin-bottom: 1rem;
+ }
+.opportunity-for-improve-section .btn {
+  margin-top: 5rem;
+}
 
 .resources-section {
   padding-top: 10rem;
