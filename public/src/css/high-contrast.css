@@ -12,6 +12,9 @@ a{
     background-color: black !important;
     color: white !important;
 }
+.navbar{
+    filter: invert(100%) !important;   
+}
 .introduction .opportunity-for-improve-section{
     background-color: black !important;
     color: white !important; 
@@ -47,7 +50,9 @@ a{
     background-color: black !important;
     color: white !important; 
 }
-
+.modal-content{
+    filter: invert(100%) !important;   
+}
 .modal-title{
     color: #000 !important;
 }
