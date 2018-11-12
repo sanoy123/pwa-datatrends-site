@@ -35,6 +35,9 @@ a{
     background-color: black !important;
     color: white !important; 
 }
+.big-photo{
+    filter: invert(100%) !important;   
+}
 .container .container-fluid {
    
     filter: invert(100%) !important;   
