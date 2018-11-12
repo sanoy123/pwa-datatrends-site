@@ -348,6 +348,11 @@
     padding: 0 0 0 2rem;
     border-left: 0.5rem solid #FA575C;
   }
+  .impact-protracted-crisis-section .featured-text2 {
+    padding: 0 0 0 2rem;
+    border-bottom: 0.5rem solid #FA575C;
+    
+  }
 }
 
 .impact-protracted-crisis-section .protracted-text {
