@@ -146,8 +146,8 @@
     -->
 
   <!-- Protracted Crisis Section -->
-  <section id="protracted-crisis" class="protracted-crisis-section text-center bg-shade">
-    <div class="container scroll-fade-content">
+  <section id="protracted-crisis" class="protracted-crisis-section bg-shade text-center">
+    <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <h2 class="text mb-4">Protracted Crisis</h2>
@@ -156,15 +156,42 @@
           <a href="https://www.hpc.tools/" target="_blank" class="btn btn-primary js-scroll-trigger">More on HPC Viewer</a>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12 mx-auto">
-          <h2 class="text mb-4">World Humanitarian Data and Trend DataViz</h2>
-          <iframe src="https://ndongamadu.github.io/viz-hdx-whdt-2018/" style="width:100%;height:905px;margin-bottom:5px;border:solid 0px #ccc;border-radius: 10px;"></iframe>
-          
-        </div>
-      </div>
 
     </div>
+  </section>
+  <section id="hdxChart" class="hdxChart">
+
+    <div class="wrapper">
+
+      <div id="at-a-glance-charts" class="row">
+        <div id="funding-trend" class="col2">
+          <h4 data-localize="funding-trend-text">Number of Inter-agency appeals & average length of crises</h4>
+          <div id="nubmer-inter-agency"></div>
+        </div>
+        <div id="peopletargeted-trend" class="col2">
+          <h4 data-localize="peopletargeted-trend-text">Funding requested by appeal length</h4>
+          <div id="requested-by-appeal"></div>
+        </div>
+      </div>
+    
+    </div>
+    <!-- end wrapper -->
+
+    <div class="wrapper">
+
+        <div id="at-a-glance-charts" class="row">
+          <div id="funding-trend" class="col2">
+            <h4 data-localize="funding-trend-text">People targeted by appeal length</h4>
+            <div id="received-by-appeal"></div>
+          </div>
+          <div id="peopletargeted-trend" class="col2">
+            <h4 data-localize="peopletargeted-trend-text">Funding received by appeal length</h4>
+            <div id="targeted-by-appeal"></div>
+          </div>
+        </div>
+        <p class="sources" id="overview-source" data-localize="overview_sources">Sources: OCHA, HPC</p>
+      </div>
+
   </section>
 
 
@@ -580,6 +607,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 
+
+  <!-- Frappe Chart -->
+  <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.1.0/dist/frappe-charts.min.iife.js"></script>
+
+
   <!--Scroll Magic-->
   <script>
     // init ScrollMagic
@@ -654,6 +686,194 @@
     });
 
   </script>
+
+
+  <script>
+    const data = {
+      labels: ["2005", "2006", "2007", "2008",
+        "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"
+      ],
+      datasets: [
+        {
+          name: "Inter-Agency Appeals", type: "line",
+          values: [16, 21, 19, 18, 18, 21, 18, 23, 22, 28, 27, 31, 30]
+        },
+        {
+          name: "Average Length of Crisis", type: "line",
+          values: [4.3, 4, 4.9, 4.8, 5.4, 5.2, 5.7, 5, 5.7, 5, 6, 6.1, 7]
+        }
+
+      ]
+    }
+
+    const chart = new frappe.Chart("#nubmer-inter-agency", {  // or a DOM element,
+      // new Chart() in case of ES6 module with above usage
+      title: "",
+      data: data,
+      type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+      height: 350,
+      colors: ['#B7BCC6', "#FA575C"],
+      isNavigable: 1,
+      valuesOverPoints: 1,
+      lineOptions: {
+        dotSize: 8
+      }
+    })
+  </script>
+  <script>
+    function convert_float(number) {
+
+      return Math.round(number * 100) / 100;
+    }
+    const appeal_data = {
+      labels: ["2005", "2006", "2007", "2008",
+        "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"
+      ],
+      datasets: [
+        {
+          name: "1-2 years", type: "line",
+          values: [convert_float(0 * 100), convert_float(0.5849821762 * 100), convert_float(0.6773203852 * 100), convert_float(0.6001299696 * 100), convert_float(0.5747879726 * 100),
+          convert_float(0.4658736059 * 100), convert_float(0.5516687371 * 100), convert_float(0.458029911 * 100), convert_float(0.3624924332 * 100),
+          convert_float(0.2923077848 * 100), convert_float(0.2589593664 * 100), convert_float(0.3313834546 * 100), convert_float(0.4053912039 * 100)]
+        },
+        {
+          name: "3-4 years", type: "line",
+          values: [convert_float(0.8249187865 * 100), convert_float(0.06562182481 * 100), convert_float(0.1136938843 * 100), convert_float(0.1341455803 * 100),
+          convert_float(0.04184321966 * 100), convert_float(0.05089398756 * 100), convert_float(0.155744119 * 100), convert_float(0.1461361112 * 100),
+          convert_float(0.05053322796 * 100), convert_float(0.04185192461 * 100), convert_float(0.1966662127 * 100), convert_float(0.2791424993 * 100), convert_float(0.3988657912 * 100)]
+        },
+        {
+          name: "5-6 years", type: "line",
+          values: [convert_float(0.1055629013 * 100), convert_float(0.1295749703 * 100), convert_float(0.05504448575 * 100), convert_float(0.1080385835 * 100),
+          convert_float(0.1866109244 * 100), convert_float(0.1564804119 * 100), convert_float(0.08553955959 * 100), convert_float(0.07731262461 * 100),
+          convert_float(0.1867190338 * 100), convert_float(0.3268605835 * 100), convert_float(0.4255835918 * 100), convert_float(0.3462006289 * 100), convert_float(0.1093813621 * 100)]
+        },
+        {
+          name: "7 years", type: "line",
+          values: [convert_float(0.06951831221 * 100), convert_float(0.2198210287 * 100), convert_float(0.1539412448 * 100), convert_float(0.1576858665 * 100), convert_float(0.1967578833 * 100), convert_float(0.3267519947 * 100), convert_float(0.2070475844 * 100),
+          convert_float(0.3185213531 * 100), convert_float(0.400255305 * 100),
+          convert_float(0.3389797071 * 100), convert_float(0.1187908291 * 100), convert_float(0.0432734173 * 100), convert_float(0.08636164287 * 100)]
+        }
+
+      ]
+    }
+
+    const appeal_charts = new frappe.Chart("#requested-by-appeal", {  // or a DOM element,
+      // new Chart() in case of ES6 module with above usage
+      title: "",
+      data: appeal_data,
+      type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+      height: 350,
+      colors: ["#FA575C", "#B7BCC6", "#002840", "#67A7D3"],
+
+      barOptions: {
+        stacked: 1
+      }
+    })
+  </script>
+
+<script>
+    function convert_float(number) {
+
+      return Math.round(number * 100) / 100;
+    }
+    const targeted_data = {
+      labels: ["2005", "2006", "2007", "2008",
+        "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"
+      ],
+      datasets: [
+        {
+          name: "1-2 years", type: "line",
+          values: [convert_float(0 * 100), convert_float(0.5849821762 * 100), convert_float(0.6773203852 * 100), convert_float(0.6001299696 * 100), convert_float(0.5747879726 * 100),
+          convert_float(0.4658736059 * 100), convert_float(0.5516687371 * 100), convert_float(0.458029911 * 100), convert_float(0.3624924332 * 100),
+          convert_float(0.2923077848 * 100), convert_float(0.2589593664 * 100), convert_float(0.3313834546 * 100), convert_float(0.4053912039 * 100)]
+        },
+        {
+          name: "3-4 years", type: "line",
+          values: [convert_float(0.8249187865 * 100), convert_float(0.06562182481 * 100), convert_float(0.1136938843 * 100), convert_float(0.1341455803 * 100),
+          convert_float(0.04184321966 * 100), convert_float(0.05089398756 * 100), convert_float(0.155744119 * 100), convert_float(0.1461361112 * 100),
+          convert_float(0.05053322796 * 100), convert_float(0.04185192461 * 100), convert_float(0.1966662127 * 100), convert_float(0.2791424993 * 100), convert_float(0.3988657912 * 100)]
+        },
+        {
+          name: "5-6 years", type: "line",
+          values: [convert_float(0.1055629013 * 100), convert_float(0.1295749703 * 100), convert_float(0.05504448575 * 100), convert_float(0.1080385835 * 100),
+          convert_float(0.1866109244 * 100), convert_float(0.1564804119 * 100), convert_float(0.08553955959 * 100), convert_float(0.07731262461 * 100),
+          convert_float(0.1867190338 * 100), convert_float(0.3268605835 * 100), convert_float(0.4255835918 * 100), convert_float(0.3462006289 * 100), convert_float(0.1093813621 * 100)]
+        },
+        {
+          name: "7 years", type: "line",
+          values: [convert_float(0.06951831221 * 100), convert_float(0.2198210287 * 100), convert_float(0.1539412448 * 100), convert_float(0.1576858665 * 100), convert_float(0.1967578833 * 100), convert_float(0.3267519947 * 100), convert_float(0.2070475844 * 100),
+          convert_float(0.3185213531 * 100), convert_float(0.400255305 * 100),
+          convert_float(0.3389797071 * 100), convert_float(0.1187908291 * 100), convert_float(0.0432734173 * 100), convert_float(0.08636164287 * 100)]
+        }
+
+      ]
+    }
+
+    const targeted_charts = new frappe.Chart("#targeted-by-appeal", {  // or a DOM element,
+      // new Chart() in case of ES6 module with above usage
+      title: "",
+      data: targeted_data,
+      type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+      height: 350,
+      colors: ["#FA575C", "#B7BCC6", "#002840", "#67A7D3"],
+
+      barOptions: {
+        stacked: 1
+      }
+    })
+  </script>
+  <script>
+      function convert_float(number) {
+  
+        return Math.round(number * 100) / 100;
+      }
+      const received_data = {
+        labels: ["2005", "2006", "2007", "2008",
+          "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"
+        ],
+        datasets: [
+          {
+            name: "1-2 years", type: "line",
+            values: [convert_float(0 * 100), convert_float(0.5849821762 * 100), convert_float(0.6773203852 * 100), convert_float(0.6001299696 * 100), convert_float(0.5747879726 * 100),
+            convert_float(0.4658736059 * 100), convert_float(0.5516687371 * 100), convert_float(0.458029911 * 100), convert_float(0.3624924332 * 100),
+            convert_float(0.2923077848 * 100), convert_float(0.2589593664 * 100), convert_float(0.3313834546 * 100), convert_float(0.4053912039 * 100)]
+          },
+          {
+            name: "3-4 years", type: "line",
+            values: [convert_float(0.8249187865 * 100), convert_float(0.06562182481 * 100), convert_float(0.1136938843 * 100), convert_float(0.1341455803 * 100),
+            convert_float(0.04184321966 * 100), convert_float(0.05089398756 * 100), convert_float(0.155744119 * 100), convert_float(0.1461361112 * 100),
+            convert_float(0.05053322796 * 100), convert_float(0.04185192461 * 100), convert_float(0.1966662127 * 100), convert_float(0.2791424993 * 100), convert_float(0.3988657912 * 100)]
+          },
+          {
+            name: "5-6 years", type: "line",
+            values: [convert_float(0.1055629013 * 100), convert_float(0.1295749703 * 100), convert_float(0.05504448575 * 100), convert_float(0.1080385835 * 100),
+            convert_float(0.1866109244 * 100), convert_float(0.1564804119 * 100), convert_float(0.08553955959 * 100), convert_float(0.07731262461 * 100),
+            convert_float(0.1867190338 * 100), convert_float(0.3268605835 * 100), convert_float(0.4255835918 * 100), convert_float(0.3462006289 * 100), convert_float(0.1093813621 * 100)]
+          },
+          {
+            name: "7 years", type: "line",
+            values: [convert_float(0.06951831221 * 100), convert_float(0.2198210287 * 100), convert_float(0.1539412448 * 100), convert_float(0.1576858665 * 100), convert_float(0.1967578833 * 100), convert_float(0.3267519947 * 100), convert_float(0.2070475844 * 100),
+            convert_float(0.3185213531 * 100), convert_float(0.400255305 * 100),
+            convert_float(0.3389797071 * 100), convert_float(0.1187908291 * 100), convert_float(0.0432734173 * 100), convert_float(0.08636164287 * 100)]
+          }
+  
+        ]
+      }
+  
+      const received_charts = new frappe.Chart("#received-by-appeal", {  // or a DOM element,
+        // new Chart() in case of ES6 module with above usage
+        title: "",
+        data: received_data,
+        type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+        height: 350,
+        colors: ["#FA575C", "#B7BCC6", "#002840", "#67A7D3"],
+  
+        barOptions: {
+          stacked: 1
+        }
+      })
+    </script>
 
 </body>
 
