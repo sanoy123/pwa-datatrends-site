@@ -311,7 +311,9 @@
   margin-bottom: 5rem;
 }
 
-
+.protracted-crisis-section h2 {
+ display:none;
+}
 
 
 
@@ -497,7 +499,7 @@ a:hover {
 }
 
 .bg-shade {
-  background-color: #F8F8F8 !important;
+  background-color: #DBDFD9 !important;
 }
 
 .bg-whdt {
