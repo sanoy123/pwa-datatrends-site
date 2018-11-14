@@ -152,7 +152,19 @@
         <div class="col-lg-8 mx-auto">
           <h2 class="text mb-4">Protracted Crisis</h2>
           <p class="text-50">Humanitarian crises are increasing in number and in duration. Since 2005, the average
-            length of crises with an active inter-agency appeal rose from 4 to 7 years in 2017. </p>
+            length of crises with an
+            active inter- agency appeal rose from 4 to 7 years in 2017, while the number of active crises receiving an
+            internationally-led response almost doubled from 16 in 2005 to 30 in 2017. These trends are also reflected
+            in the
+            steady growth of people in need and people targeted for assistance. The majority of people targeted receive
+            assistance for five years or more (nearly 60 percent). Since 2015, appeals for crises lasting five years or
+            longer have spiked and now command most funding received and requested (80 per cent, compared to
+            approximately 30
+            per cent in 2015). In the absence of political solutions to long- standing crises, these trends are likely
+            to
+            increase with humanitarians staying longer in crisis situations, emphasizing the need for closer
+            cooperation and
+            collaboration between humanitarian and development actors to decrease vulnerability in the long-term.</p>
           <a href="https://www.hpc.tools/" target="_blank" class="btn btn-primary js-scroll-trigger">More on HPC Viewer</a>
         </div>
       </div>
@@ -160,6 +172,7 @@
     </div>
   </section>
   <section id="hdxChart" class="hdxChart">
+
 
     <div class="wrapper">
 
@@ -173,24 +186,56 @@
           <div id="requested-by-appeal"></div>
         </div>
       </div>
-    
+
     </div>
     <!-- end wrapper -->
 
     <div class="wrapper">
 
-        <div id="at-a-glance-charts" class="row">
-          <div id="funding-trend" class="col2">
-            <h4 data-localize="funding-trend-text">People targeted by appeal length</h4>
-            <div id="received-by-appeal"></div>
-          </div>
-          <div id="peopletargeted-trend" class="col2">
-            <h4 data-localize="peopletargeted-trend-text">Funding received by appeal length</h4>
-            <div id="targeted-by-appeal"></div>
-          </div>
+      <div id="at-a-glance-charts" class="row">
+        <div id="funding-trend" class="col2">
+          <h4 data-localize="funding-trend-text">People targeted by appeal length</h4>
+          <div id="received-by-appeal"></div>
         </div>
-        <p class="sources" id="overview-source" data-localize="overview_sources">Sources: OCHA, HPC</p>
+        <div id="peopletargeted-trend" class="col2">
+          <h4 data-localize="peopletargeted-trend-text">Funding received by appeal length</h4>
+          <div id="targeted-by-appeal"></div>
+        </div>
       </div>
+      <p class="sources" id="overview-source" data-localize="overview_sources">Sources: OCHA, HPC</p>
+    </div>
+
+    <div class="wrapper">
+
+        <div id="funding-tables">
+            <table id="hrps">
+                <thead>
+                    <tr class="header-row">
+                        <td class="ft-response-plan"></td>
+                       
+                       
+                        <td class="ft-percentagebar">
+                            <span id="funded-text" style="float:left;" data-localize="funded_text">Funded</span>
+                            <span id="notfunded-text" data-localize="notfunded_text">Not Funded</span>
+                            <div class="outerbar">
+                                <div class="innerbar" style="width:50%;"></div>
+                            </div>
+                        </td>
+                        <td class="ft-percentagefigure">
+                            <h2>%</h2>
+                        </td>
+                    </tr>
+                    <tr class="break-row">
+                        <td></td>
+                        <td></td>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                  <!-- data inserts here -->
+                </tbody>
+            </table>
+    </div>
 
   </section>
 
@@ -599,6 +644,9 @@
   <!-- Custom scripts for the ServiceWorker -->
   <script src="src/js/app.js"></script>
 
+  <!-- Cross Filter -->
+  <script src="src/js/crossfilter.v1.min.js"></script>
+
   <!-- Greensock -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
 
@@ -772,7 +820,7 @@
     })
   </script>
 
-<script>
+  <script>
     function convert_float(number) {
 
       return Math.round(number * 100) / 100;
@@ -824,56 +872,133 @@
     })
   </script>
   <script>
-      function convert_float(number) {
-  
-        return Math.round(number * 100) / 100;
-      }
-      const received_data = {
-        labels: ["2005", "2006", "2007", "2008",
-          "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"
-        ],
-        datasets: [
-          {
-            name: "1-2 years", type: "line",
-            values: [convert_float(0 * 100), convert_float(0.5849821762 * 100), convert_float(0.6773203852 * 100), convert_float(0.6001299696 * 100), convert_float(0.5747879726 * 100),
-            convert_float(0.4658736059 * 100), convert_float(0.5516687371 * 100), convert_float(0.458029911 * 100), convert_float(0.3624924332 * 100),
-            convert_float(0.2923077848 * 100), convert_float(0.2589593664 * 100), convert_float(0.3313834546 * 100), convert_float(0.4053912039 * 100)]
-          },
-          {
-            name: "3-4 years", type: "line",
-            values: [convert_float(0.8249187865 * 100), convert_float(0.06562182481 * 100), convert_float(0.1136938843 * 100), convert_float(0.1341455803 * 100),
-            convert_float(0.04184321966 * 100), convert_float(0.05089398756 * 100), convert_float(0.155744119 * 100), convert_float(0.1461361112 * 100),
-            convert_float(0.05053322796 * 100), convert_float(0.04185192461 * 100), convert_float(0.1966662127 * 100), convert_float(0.2791424993 * 100), convert_float(0.3988657912 * 100)]
-          },
-          {
-            name: "5-6 years", type: "line",
-            values: [convert_float(0.1055629013 * 100), convert_float(0.1295749703 * 100), convert_float(0.05504448575 * 100), convert_float(0.1080385835 * 100),
-            convert_float(0.1866109244 * 100), convert_float(0.1564804119 * 100), convert_float(0.08553955959 * 100), convert_float(0.07731262461 * 100),
-            convert_float(0.1867190338 * 100), convert_float(0.3268605835 * 100), convert_float(0.4255835918 * 100), convert_float(0.3462006289 * 100), convert_float(0.1093813621 * 100)]
-          },
-          {
-            name: "7 years", type: "line",
-            values: [convert_float(0.06951831221 * 100), convert_float(0.2198210287 * 100), convert_float(0.1539412448 * 100), convert_float(0.1576858665 * 100), convert_float(0.1967578833 * 100), convert_float(0.3267519947 * 100), convert_float(0.2070475844 * 100),
-            convert_float(0.3185213531 * 100), convert_float(0.400255305 * 100),
-            convert_float(0.3389797071 * 100), convert_float(0.1187908291 * 100), convert_float(0.0432734173 * 100), convert_float(0.08636164287 * 100)]
-          }
-  
-        ]
-      }
-  
-      const received_charts = new frappe.Chart("#received-by-appeal", {  // or a DOM element,
-        // new Chart() in case of ES6 module with above usage
-        title: "",
-        data: received_data,
-        type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
-        height: 350,
-        colors: ["#FA575C", "#B7BCC6", "#002840", "#67A7D3"],
-  
-        barOptions: {
-          stacked: 1
+    function convert_float(number) {
+
+      return Math.round(number * 100) / 100;
+    }
+    const received_data = {
+      labels: ["2005", "2006", "2007", "2008",
+        "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"
+      ],
+      datasets: [
+        {
+          name: "1-2 years", type: "line",
+          values: [convert_float(0 * 100), convert_float(0.5849821762 * 100), convert_float(0.6773203852 * 100), convert_float(0.6001299696 * 100), convert_float(0.5747879726 * 100),
+          convert_float(0.4658736059 * 100), convert_float(0.5516687371 * 100), convert_float(0.458029911 * 100), convert_float(0.3624924332 * 100),
+          convert_float(0.2923077848 * 100), convert_float(0.2589593664 * 100), convert_float(0.3313834546 * 100), convert_float(0.4053912039 * 100)]
+        },
+        {
+          name: "3-4 years", type: "line",
+          values: [convert_float(0.8249187865 * 100), convert_float(0.06562182481 * 100), convert_float(0.1136938843 * 100), convert_float(0.1341455803 * 100),
+          convert_float(0.04184321966 * 100), convert_float(0.05089398756 * 100), convert_float(0.155744119 * 100), convert_float(0.1461361112 * 100),
+          convert_float(0.05053322796 * 100), convert_float(0.04185192461 * 100), convert_float(0.1966662127 * 100), convert_float(0.2791424993 * 100), convert_float(0.3988657912 * 100)]
+        },
+        {
+          name: "5-6 years", type: "line",
+          values: [convert_float(0.1055629013 * 100), convert_float(0.1295749703 * 100), convert_float(0.05504448575 * 100), convert_float(0.1080385835 * 100),
+          convert_float(0.1866109244 * 100), convert_float(0.1564804119 * 100), convert_float(0.08553955959 * 100), convert_float(0.07731262461 * 100),
+          convert_float(0.1867190338 * 100), convert_float(0.3268605835 * 100), convert_float(0.4255835918 * 100), convert_float(0.3462006289 * 100), convert_float(0.1093813621 * 100)]
+        },
+        {
+          name: "7 years", type: "line",
+          values: [convert_float(0.06951831221 * 100), convert_float(0.2198210287 * 100), convert_float(0.1539412448 * 100), convert_float(0.1576858665 * 100), convert_float(0.1967578833 * 100), convert_float(0.3267519947 * 100), convert_float(0.2070475844 * 100),
+          convert_float(0.3185213531 * 100), convert_float(0.400255305 * 100),
+          convert_float(0.3389797071 * 100), convert_float(0.1187908291 * 100), convert_float(0.0432734173 * 100), convert_float(0.08636164287 * 100)]
         }
-      })
-    </script>
+
+      ]
+    }
+
+    const received_charts = new frappe.Chart("#received-by-appeal", {  // or a DOM element,
+      // new Chart() in case of ES6 module with above usage
+      title: "",
+      data: received_data,
+      type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+      height: 350,
+      colors: ["#FA575C", "#B7BCC6", "#002840", "#67A7D3"],
+
+      barOptions: {
+        stacked: 0
+      }
+    })
+  </script>
+  <script>
+var date_sort = function(d1, d2) {
+    if (d1['#date+year'] > d2['#date+year']) return 1;
+    if (d1['#date+year'] < d2['#date+year']) return -1;
+    return 0;
+}
+var humdevCall = $.ajax({
+    type: 'GET',
+    url: 'https://proxy.hxlstandard.org/data.json?strip-headers=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1q8CtQ5WF0k9E6dYiPmYDTRysLmxFfRRJaFuxnDlzPT8%2Fedit%23gid%3D1471518527&force=on',
+    dataType: 'json',
+});
+$.when(humdevCall).then(function(humdevArgs) {
+    var humdevData = hxlProxyToJSON(humdevArgs);
+
+  var groupBy = function (xs, key) {
+    return xs.reduce(function (rv, x) {
+      (rv[x[key]] = rv[x[key]] || []).push(x);
+      return rv;
+    }, {});
+  };
+  var groubedByCountryName = groupBy(humdevData, '#country+name')
+  console.log(groubedByCountryName);
+  html='';
+  var groubedByCountryName = groupBy(humdevData, '#country+name')
+  for (i=0; i < 10; i++) {
+    html += '<tr id="" class="country-row">' +
+                        '<td>' + humdevData[i]["#country+name"]+ ' <i class="fas fa-bars"></i></td>' +
+                        '<td class="ft-percentagebar">' +
+                        '<div class="outerbar">' +
+                        '<div class="innerbar" style="width:30%;"></div>' +
+                        '</div>' +
+                        '</td><td>&nbsp;</td>' +
+                        '</tr>';
+                   
+  }
+
+ $('#hrps tbody').append(html);
+
+
+
+   
+
+});
+
+
+
+function hxlProxyToJSON(input, headers) {
+    var output = [];
+    var keys = []
+    input.forEach(function(e, i) {
+        if (i == 0) {
+            e.forEach(function(e2, i2) {
+                var parts = e2.split('+');
+                var key = parts[0]
+                if (parts.length > 1) {
+                    var atts = parts.splice(1, parts.length);
+                    atts.sort();
+                    atts.forEach(function(att) {
+                        key += '+' + att
+                    });
+                }
+                keys.push(key);
+            });
+        } else {
+            var row = {};
+            e.forEach(function(e2, i2) {
+                row[keys[i2]] = e2;
+            });
+            output.push(row);
+        }
+    });
+    return output;
+}
+
+
+
+  </script>
 
 </body>
 
