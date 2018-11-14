@@ -492,7 +492,7 @@
 }
 
 body {
-  font-family: 'Nunito';
+  font-family: 'Varela Round';
   letter-spacing: 0.0625em;
 }
 
@@ -512,6 +512,7 @@ h2 {
   font-weight: 900;
   text-transform: uppercase;
   color: #FA575C;
+  font-family: 'Varela Round'
   
 }
 h2:before {
@@ -644,7 +645,7 @@ td {
   line-height: 22px;
   text-transform: uppercase;
   font-weight: 700;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Varela Round';
 }
 
 td.ft-response-plan {
@@ -713,7 +714,7 @@ td.ft-percentagefigure {
 .table-info h2 {
   text-align: left;
   text-transform: none;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Varela Round';
   font-size: 32px;
   line-height: 36px;
   font-weight: 900;
