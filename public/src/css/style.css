@@ -234,11 +234,27 @@
     line-height: 4rem;
   }
 
-
+ 
 
 
 }
+@media (max-width: 768px) {
 
+ #hdxChart .col2{
+    display: block;
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+}
+@media (max-width:360px) {
+  #hdxChart .col2 {
+    display: block;
+    width: 100%;
+    float: none;
+    margin-right: 0;
+  }
+}
 
 
 @media (min-width: 992px) {
@@ -257,6 +273,7 @@
     max-width: 30rem;
     font-size: 1.25rem;
   }
+ 
 }
 
 .btn {
@@ -359,6 +376,7 @@
     border-bottom: 0.5rem solid transparent;
     
   }
+ 
 }
 
 .impact-protracted-crisis-section .protracted-text {
@@ -488,7 +506,25 @@ a:hover {
   text-decoration: none;
   color: #3c6360;
 }
-
+h2 {
+  font-size: 42px;
+  line-height: 46px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FA575C;
+  
+}
+h2:before {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 200px;
+  background-color:#FA575C;
+  position: relative;
+  left: 50%;
+  margin-left: -100px;
+  margin-bottom: 10px;
+}
 .bg-black {
   background-color: #161616 !important;
 }
