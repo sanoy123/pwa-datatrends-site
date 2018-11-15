@@ -667,7 +667,7 @@ td.ft-percentagebar {
 
 td.ft-percentagefigure {
   width: 7.817%;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Varela Round';
   font-weight: 700;
   color: rgb(232, 83, 86);
 }
@@ -748,7 +748,28 @@ td.ft-percentagefigure {
 
 #funding-section .table-info p.figure {
   text-align: center;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Varela Round';
   color: rgb(182, 188, 198);
 }
 
+/*------ FRAPPE -----*/
+.graph-svg-tip.comparison * {
+	font-family:'Roboto Condensed', sans-serif;
+}
+.graph-svg-tip.comparison .data-point-list, .graph-svg-tip.comparison .title {
+	color:rgb(255,255,255);
+	text-align:center;
+}
+.graph-svg-tip.comparison .title {
+	font-size:18px;
+}
+.graph-svg-tip.comparison .data-point-list strong {
+	font-family:'Varela Round';
+	font-size:22px;
+	display:block;
+	margin:5px 0;
+	color:rgb(232, 83, 86);
+}
+#frappe-chart1 .chart-container .path-group path {
+	stroke-width:6px;
+}
