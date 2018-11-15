@@ -10,7 +10,6 @@ self.addEventListener('install', function (event) {
           '/src/js/main.js',
           '/src/js/main.min.js',
 
-
           '/src/img/ai01.jpg',
           '/src/img/ai02.jpg',
 
