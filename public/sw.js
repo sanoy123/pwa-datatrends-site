@@ -9,26 +9,36 @@ self.addEventListener('install', function (event) {
           '/src/js/app.js',
           '/src/js/main.js',
           '/src/js/main.min.js',
-          '/src/img/hero.jpg',
+
+
+          '/src/img/ai01.jpg',
+          '/src/img/ai02.jpg',
+
+          '/src/img/attack-education01.jpg',
+          '/src/img/attack-education02.jpg',
+          '/src/img/attack-education03.jpg',
+
+          '/src/img/attack-health01.jpg',
+          '/src/img/attack-health02.jpg',
+          '/src/img/attack-health03.jpg',
+          '/src/img/attack-health04.jpg',
+
+          '/src/img/cbpf01.jpg',
+          '/src/img/cbpf02.jpg',
+
           '/src/img/hero1.jpg',
           '/src/img/hero2.jpg',
           '/src/img/hero3.jpg',
           '/src/img/hero4.jpg',
           '/src/img/hero5.jpg',
           '/src/img/hero6.jpg',
-          '/src/img/intro.jpg',
+
+          '/src/img/opportunites-section.jpg',
+
           '/src/img/logo-ocha.png',
-          '/src/img/resources.jpg',
+        
           '/src/img/sky.png',
-          '/src/img/thumbnail-image-01.jpg',
-          '/src/img/thumbnail-image-02.jpg',
-          '/src/img/thumbnail-image-03.jpg',
-          '/src/img/ai01.jpg',
-          '/src/img/ai02.jpg',
-          '/src/img/attack-health01.jpg',
-          '/src/img/attack-health02.jpg',
-          '/src/img/attack-health03.jpg',
-          '/src/img/attack-health04.jpg',
+         
           '/src/vendor/bootstrap/css/bootstrap.min.css',
           '/src/vendor/fontawesome-free/css/all.min.css',
 
