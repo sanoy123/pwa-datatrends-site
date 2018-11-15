@@ -25,7 +25,10 @@ self.addEventListener('install', function (event) {
           '/src/img/thumbnail-image-03.jpg',
           '/src/img/ai01.jpg',
           '/src/img/ai02.jpg',
-
+          '/src/img/attack-health01.jpg',
+          '/src/img/attack-health02.jpg',
+          '/src/img/attack-health03.jpg',
+          '/src/img/attack-health04.jpg',
           '/src/vendor/bootstrap/css/bootstrap.min.css',
           '/src/vendor/fontawesome-free/css/all.min.css',
 
