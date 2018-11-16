@@ -191,7 +191,7 @@
     <!-- end wrapper -->
 
     <div class="wrapper">
-      
+
       <div id="at-a-glance-charts" class="row">
         <div id="funding-trend" class="col2">
           <h4 data-localize="funding-trend-text">People targeted by appeal length</h4>
@@ -205,16 +205,17 @@
     </div>
 
     <div class="wrapper text-center" id="cumulative-apppeal">
-        <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                  <h4 data-localize="funding-trend-text">Crises by number of cumulative appeals</h4>
-                <p class="text-50">Data runs until 2016, which is the most recent year for which complete data was available at the time of publication.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h4 data-localize="funding-trend-text">Crises by number of cumulative appeals</h4>
+            <p class="text-50">Data runs until 2016, which is the most recent year for which complete data was
+              available at the time of publication.</p>
 
-              </div>
-            </div>
-      
           </div>
+        </div>
+
+      </div>
       <div id="funding-tables">
         <table id="crises">
           <thead>
@@ -224,7 +225,7 @@
 
               <td class="percentagebar">
                 <span style="float:left;" data-localize="funded_text">Crisis</span>
-                <span  data-localize="notfunded_text">&nbsp;</span>
+                <span data-localize="notfunded_text">&nbsp;</span>
                 <div class="outerbar">
                   <div class="innerbar" style="width:50%;"></div>
                 </div>
@@ -665,7 +666,7 @@
         </div>
         <div class="modal-body">
 
-          
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -1051,14 +1052,35 @@
 
       for (i = 0; i < crisesGroup.length; i++) {
         html += '<tr id="" class="country-row">' +
-          '<td><a class="toggle" data-toggle="modal" data-target="#crisisDetail" id="toggle-' + crisesGroup[i].key +
+          '<td><a class="toggle" id="toggle-' + crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +
           '">' + crisesGroup[i].key + ' <i class="fas fa-bars"></i></a></td>' +
           '<td class="percentagebar">' +
           '<div class="outerbar">' +
           '<div class="innerbar" style="width:' + crisesGroup[i].value + '%;"></div>' +
           '</div>' +
           '</td><td>&nbsp;<strong>' + crisesGroup[i].value + '%</strong></td>' +
-          '</tr>';
+          '</tr>' +
+          '<tr class="table-info">' +
+          '<td colspan="3">' +
+          '<div class="textarea">' +
+          '<div  id="' + crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +
+          '-info" class="row content-info text-left" style="display:none;">' +
+          '<div class="col1"><h3>' + crisesGroup[i].key + '</h3></div>' +
+          '<div class="col1">' +
+          '<nav><div class="nav nav-tabs" id="nav-tab" role="tablist">' +
+          '<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Fundings</a>' +
+          '<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">People Targeted</a>' +
+          '<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Interanally Displaced</a>' +
+          '</div>' +
+          '</nav>' +
+          '<div class="tab-content" id="nav-tabContent">' +
+          '<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="sample"></div></div>' +
+          '<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>' +
+          '<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>' +
+          '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div></td></tr>';
 
       }
 
@@ -1093,6 +1115,26 @@
 
      */
 
+    // make toggle button work for the plans section
+    $(document).on("click", ".toggle", function () {
+      countryName = (this.id).replace('toggle-', '');
+      $(this).toggleClass('toggled');
+      if ($(this).hasClass('toggled')) {
+        $('.content-info:not(#' + countryName + '-info)').css('display', 'none');
+        $('.toggled:not(#toggle-' + countryName + ')').removeClass('toggled');
+        $('#' + countryName + '-info').addClass('toggled-info');
+        if ($(window).width() < 900) {
+          $('#' + countryName + '-info').css('display', 'block');
+        } else {
+          $('#' + countryName + '-info').css('display', 'flex');
+        }
+
+      } else {
+        $('#' + countryName + '-info').css('display', 'none');
+        $('#' + countryName + '-info').removeClass('toggled-info');
+      }
+    });
+
 
     function hxlProxyToJSON(input, headers) {
       var output = [];
@@ -1121,6 +1163,58 @@
       });
       return output;
     }
+  </script>
+  <script>
+    let chart_sample = new frappe.Chart(".sample", { // or DOM element
+      data: {
+        labels: ["12am-3am", "3am-6am", "6am-9am", "9am-12pm",
+          "12pm-3pm", "3pm-6pm", "6pm-9pm", "9pm-12am"
+        ],
+
+        datasets: [{
+            name: "Some Data",
+            chartType: 'bar',
+            values: [25, 40, 30, 35, 8, 52, 17, -4]
+          },
+          {
+            name: "Another Set",
+            chartType: 'bar',
+            values: [25, 50, -10, 15, 18, 32, 27, 14]
+          },
+          {
+            name: "Yet Another",
+            chartType: 'line',
+            values: [15, 20, -3, -15, 58, 12, -17, 37]
+          }
+        ],
+
+        yMarkers: [{
+          label: "Marker",
+          value: 70,
+          options: {
+            labelPos: 'left'
+          }
+        }],
+        yRegions: [{
+          label: "Region",
+          start: -10,
+          end: 50,
+          options: {
+            labelPos: 'right'
+          }
+        }]
+      },
+
+      title: "My Awesome Chart",
+      type: 'axis-mixed', // or 'bar', 'line', 'pie', 'percentage'
+      height: 300,
+      colors: ['purple', '#ffa3ef', 'light-blue'],
+
+      tooltipOptions: {
+        formatTooltipX: d => (d + '').toUpperCase(),
+        formatTooltipY: d => d + ' pts',
+      }
+    });
   </script>
 
 </body>
