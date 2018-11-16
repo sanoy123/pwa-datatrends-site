@@ -353,6 +353,14 @@
 .opportunity-for-improve-section .btn {
   margin-top: 5rem;
 }
+#cumulative-apppeal a {
+  text-transform: uppercase;
+  font-family: 'Varela Round';
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
 .hdxChart{
   padding-top: 5rem;
 }
@@ -526,6 +534,9 @@ h2:before {
   margin-left: -100px;
   margin-bottom: 10px;
 }
+h4{
+  text-transform: uppercase;
+}
 .bg-black {
   background-color: #161616 !important;
 }
@@ -586,6 +597,7 @@ p.sources {
   margin-bottom: 0px;
   border-top: 1px solid rgba(232, 83, 86, 1);
   margin-top: 30px;
+  text-align: left;
 }
 
 footer {
@@ -629,7 +641,7 @@ a.toggled {
 
 td {
   padding: 5px;
-  text-align: left;
+  text-align: right;
 }
 
 .header-row td {
@@ -648,8 +660,8 @@ td {
   font-family: 'Varela Round';
 }
 
-td.ft-response-plan {
-  width: 31.616%;
+td.country-name {
+  width: 24.616%;
 }
 
 td.ft-requirements {
@@ -660,8 +672,8 @@ td.ft-fundingamount {
   width: 8.652%;
 }
 
-td.ft-percentagebar {
-  width: 38.44%;
+td.percentagebar {
+  width: 44.44%;
   padding-left: 20px;
 }
 
