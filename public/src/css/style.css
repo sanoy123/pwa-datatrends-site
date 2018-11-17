@@ -449,12 +449,11 @@
 .hdxChart .btn{
 
     box-shadow: none !important;
-    padding: 1rem 2rem;
-    font-family: 'Varela Round';
-    font-size: 80%;
     text-transform: uppercase;
-    letter-spacing: .15rem;
-    border: 0;
+    font-family: 'Varela Round';
+    font-size: 16px;
+    padding-bottom: 5px;
+    font-weight: 700;
 
 }
 .resources-section {
