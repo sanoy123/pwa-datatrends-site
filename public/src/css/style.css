@@ -265,6 +265,78 @@
   }
 }
 
+@media (max-width:900px) {
+	.content-info {
+		display:block;
+		width:100%;
+	}
+	.table-info .textarea, .table-info .iconarea {
+		width:100%;
+		float:none;
+		display:block;
+		margin:0;
+	}
+	.table-info .iconarea {
+		clear:both;
+		padding-top:30px;
+	}
+}
+@media (max-width:720px) {
+	#funding-tables tr {
+		clear:both;
+		width:100%;
+		display:block;
+	}
+	.table-info:after {
+		display:block;
+		width:100%;
+		content:'';
+		padding:0 0 10px 0;
+		border-bottom:1px dotted rgb(220,220,220);
+	}
+	#funding-tables td {
+		display:block;
+		float:left;
+		box-sizing:border-box;
+	}
+	a.toggle {
+		float:left;
+		margin-left:-25px;
+		margin-right:5px;
+	}
+	td.country-name {
+		width:80%;
+		text-align:left;
+		text-indent:25px;
+		font-weight:700;
+	}
+
+
+	td.percentagebar {
+		display: none !important;
+	}
+	td.percentagefigure {
+		display: none !important;
+  }
+
+  
+  .percent{
+    display: none !important;
+  }
+
+	.table-info .iconarea .row {
+		display:block;
+	}
+	.table-info .iconarea .col2 {
+		width:100%;
+		float:none;
+	}
+	.table-info .iconarea .col2:last-of-type {
+		margin-top:30px;
+	}
+}
+
+
 
 @media (min-width: 992px) {
   .header {
@@ -372,6 +444,18 @@
 
 .hdxChart{
   padding-top: 5rem;
+}
+
+.hdxChart .btn{
+
+    box-shadow: none !important;
+    padding: 1rem 2rem;
+    font-family: 'Varela Round';
+    font-size: 80%;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    border: 0;
+
 }
 .resources-section {
   padding-top: 10rem;
@@ -595,8 +679,8 @@ h4{
   margin-right: 20px;
 }
 .col1 {
-  width: 90%;
-  margin-right: 40px;
+  width: 100%;
+ 
 }
 .col1.infobox {
   width: 100%;
@@ -633,6 +717,7 @@ table {
   color: rgb(120, 120, 120);
   font-size: 18px;
   margin-top: 30px;
+  margin: 0 auto;
 }
 
 a.toggle {
@@ -662,7 +747,7 @@ td {
   text-align: right;
 }
 
-.header-row td {
+.header-row  {
   border-top: 4px solid#FA575C;
   border-bottom: 4px solid#FA575C;
 }
@@ -695,7 +780,7 @@ td.percentagebar {
   padding-left: 20px;
 }
 
-td.ft-percentagefigure {
+td.percentagefigure {
   width: 7.817%;
   font-family: 'Varela Round';
   font-weight: 700;
