@@ -61,6 +61,7 @@ self.addEventListener('install', function (event) {
           '/src/reports/World_Humanitarian_Data_and_Trends_2015.pdf',  
           '/src/reports/World_Humanitarian_Data_and_Trends_2016.pdf',  
           '/src/reports/World_Humanitarian_Data_and_Trends_2017.pdf',  
+          
 
           'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js',
           'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js',
