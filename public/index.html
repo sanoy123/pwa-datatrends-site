@@ -224,14 +224,14 @@
 
 
               <td class="percentagebar">
-                <span style="float:left;" data-localize="funded_text">Crisis</span>
+                <span style="float:left;" data-localize="funded_text">Number of Cumulative Appeals</span>
                 <span data-localize="notfunded_text">&nbsp;</span>
                 <div class="outerbar">
                   <div class="innerbar" style="width:50%;"></div>
                 </div>
               </td>
               <td class="percentagefigure">
-                <h3>%</h3>
+                <h3>#</h3>
               </td>
             </tr>
             <tr class="break-row">
@@ -250,7 +250,7 @@
       </div>
 
   </section>
--->
+
 
   <!-- Impact Protracted Crisis Section -->
   <section id="impact-protracted-crisis" class="impact-protracted-crisis-section text-center">
@@ -1037,6 +1037,16 @@
     });
 
     function genererGraphesDetails(data) {
+
+      var sortData = function(d1, d2) {
+      if (d1.key > d2.key) return 1;
+      if (d1.key < d2.key) return -1; return 0; };
+
+
+      var date_sort = function(d1, d2) {
+      if (d1['#date+year'] > d2['#date+year']) return 1;
+      if (d1['#date+year'] < d2['#date+year']) return -1; return 0; }
+
       var cf = crossfilter(data);
 
       var crisesDim,
@@ -1047,10 +1057,12 @@
       });
       crisesGroup = crisesDim.group().reduceCount().all();
 
-      console.log(crisesGroup);
+      //console.log(crisesDim.filter('Zimbabwe').top(Infinity));
       html = '';
-
+      //function drawDetailChart(chartType, data, renderIt){
       for (i = 0; i < crisesGroup.length; i++) {
+
+       
         html += '<tr id="" class="country-row">' +
           '<td><a class="toggle" id="toggle-' + crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +
           '">' + crisesGroup[i].key + ' <i class="fas fa-bars"></i></a></td>' +
@@ -1058,25 +1070,25 @@
           '<div class="outerbar">' +
           '<div class="innerbar" style="width:' + crisesGroup[i].value + '%;"></div>' +
           '</div>' +
-          '</td><td>&nbsp;<strong class="percent">' + crisesGroup[i].value + '%</strong></td>' +
+          '</td><td>&nbsp;<strong class="percent">' + crisesGroup[i].value + '</strong></td>' +
           '</tr>' +
           '<tr class="table-info">' +
           '<td colspan="3">' +
           '<div class="textarea">' +
           '<div  id="' + crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +
           '-info" class="row content-info text-left" style="display:none;">' +
-          '<div class="col1 "><h3>' + crisesGroup[i].key + '</h3></div>' +
+          '<div class="col1 "><h3>' + crisesGroup[i].key + ' (' + crisesGroup[i].value + ')</h3></div>' +
           '<div class="col1">' +
-          '<div class="accordion" id="accordionExample">' +
+          '<div class="accordion" id="accordion'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<div class="card">' +
-          '<div class="card-header" id="headingOne">' +
+          '<div class="card-header" id="headingOne'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<h5 class="mb-0">' +
-          '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">' +
+          '<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" aria-expanded="true" aria-controls="collapseOne'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           'Fundings' +
           '</button>' +
           '</h5>' +
           '</div>' +
-          '  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">' +
+          '  <div id="collapseOne'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" class="collapse show" aria-labelledby="headingOne'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" data-parent="#accordion'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<div class="card-body">' +
           'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven t heard of them accusamus labore sustainable VHS.'+
         
@@ -1086,16 +1098,17 @@
 
 
               '<div class="card">' +
-          '<div class="card-header" id="headingTwo">' +
+          '<div class="card-header" id="headingTwo'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<h5 class="mb-0">' +
-          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">' +
+          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" aria-expanded="false" aria-controls="collapseTwo'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           'People Targeted' +
           '</button>' +
           '</h5>' +
           '</div>' +
-          '  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">' +
+          '  <div id="collapseTwo'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" class="collapse" aria-labelledby="headingTwo'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" data-parent="#accordion'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<div class="card-body">' +
-          'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven t heard of them accusamus labore sustainable VHS.'+
+          '<div id="chart-'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'"></div>'+
+          
         
         '</div>' +
         '</div>' +
@@ -1104,14 +1117,14 @@
 
 
      '<div class="card">' +
-          '<div class="card-header" id="headingThree">' +
+          '<div class="card-header" id="headingThree'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<h5 class="mb-0">' +
-          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">' +
+          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" aria-expanded="false" aria-controls="collapseThree'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           'Internally displace persons by conflict or violence (IDMC)' +
           '</button>' +
           '</h5>' +
           '</div>' +
-          '  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">' +
+          '  <div id="collapseThree'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" class="collapse" aria-labelledby="headingThree'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" data-parent="#accordion'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<div class="card-body">' +
           'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven t heard of them accusamus labore sustainable VHS.'+
         
@@ -1120,14 +1133,14 @@
         '</div>' +
 
      '<div class="card">' +
-          '<div class="card-header" id="headingFour">' +
+          '<div class="card-header" id="headingFour'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<h5 class="mb-0">' +
-          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">' +
+          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" aria-expanded="false" aria-controls="collapseFour'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           'People affected by natural disasters' +
           '</button>' +
           '</h5>' +
           '</div>' +
-          '  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">' +
+          '  <div id="collapseFour'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" class="collapse" aria-labelledby="headingFour'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" data-parent="#accordion'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<div class="card-body">' +
           'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven t heard of them accusamus labore sustainable VHS.'+
         
@@ -1137,14 +1150,14 @@
 
 
           '<div class="card">' +
-          '<div class="card-header" id="headingFive">' +
+          '<div class="card-header" id="headingFive'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<h5 class="mb-0">' +
-          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">' +
+          '<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" aria-expanded="false" aria-controls="collapseFive'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           'Mortality rate, under-5 (per 1,000 live births)' +
           '</button>' +
           '</h5>' +
           '</div>' +
-          '  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">' +
+          '  <div id="collapseFive'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" class="collapse" aria-labelledby="headingFive'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'" data-parent="#accordion'+ crisesGroup[i].key.replace(/ /g, "").replace(/'/g, "") +'">' +
           '<div class="card-body">' +
           'Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven t heard of them accusamus labore sustainable VHS.'+
         
@@ -1161,11 +1174,22 @@
         '</div>' +
         '</div>' +
         '</div></td></tr>';
-
+         
+        
+        
       }
 
-      $('#crises tbody').append(html);
+     $('#crises tbody').append(html);
 
+      for (j = 0; j < crisesGroup.length; j++) {
+        drawDetailChart('bar', crisesDim.filter(crisesGroup[j].key).top(Infinity), 'chart-'+ crisesGroup[j].key.replace(/ /g, "").replace(/'/g, ""));
+
+      
+      }
+
+     
+      
+     
 
     }
     /*
@@ -1245,56 +1269,39 @@
     }
   </script>
   <script>
-    let chart_sample = new frappe.Chart(".sample", { // or DOM element
-      data: {
-        labels: ["12am-3am", "3am-6am", "6am-9am", "9am-12pm",
-          "12pm-3pm", "3pm-6pm", "6pm-9pm", "9pm-12am"
-        ],
+   function drawDetailChart(chartType, data, renderIt){
+   console.log(data);
+   let targeted = [], dates = [];
 
-        datasets: [{
-            name: "Some Data",
-            chartType: 'bar',
-            values: [25, 40, 30, 35, 8, 52, 17, -4]
-          },
-          {
-            name: "Another Set",
-            chartType: 'bar',
-            values: [25, 50, -10, 15, 18, 32, 27, 14]
-          },
-          {
-            name: "Yet Another",
-            chartType: 'line',
-            values: [15, 20, -3, -15, 58, 12, -17, 37]
-          }
-        ],
+   for (d in data) {
+    
+    dates.push(Number(data[d]['#date+year']).toString());
+    targeted.push(Number(data[d]['#inneed+targeted']));
+    
+   }
 
-        yMarkers: [{
-          label: "Marker",
-          value: 70,
-          options: {
-            labelPos: 'left'
-          }
-        }],
-        yRegions: [{
-          label: "Region",
-          start: -10,
-          end: 50,
-          options: {
-            labelPos: 'right'
-          }
-        }]
-      },
+    const received_data_targeted = {
+      labels: dates,
+      datasets: [{name: "Targeted",type: "line", values: targeted}]
+    }
 
-      title: "My Awesome Chart",
-      type: 'axis-mixed', // or 'bar', 'line', 'pie', 'percentage'
-      height: 300,
-      colors: ['purple', '#ffa3ef', 'light-blue'],
-
-      tooltipOptions: {
-        formatTooltipX: d => (d + '').toUpperCase(),
-        formatTooltipY: d => d + ' pts',
+       
+  // console.log(dates);
+    const received_chartss = new frappe.Chart("#"+renderIt, { // or a DOM element,
+      // new Chart() in case of ES6 module with above usage
+      title: "",
+      data: received_data_targeted,
+      type: 'bar', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+      height: 350,
+    
+      colors: ["#FA575C", "#B7BCC6"],
+        barOptions: {
+        stacked: 0
       }
-    });
+    })
+    
+  }
+   
   </script>
 
 </body>
