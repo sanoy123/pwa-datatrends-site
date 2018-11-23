@@ -1313,25 +1313,29 @@
       }
       console.log(lengthCrisis);
       const data_funding = {
-        labels: dates.sort(),
+        labels: dates,
         datasets: [{
             name: "Consecutive length of appeals",
             chartType: "line",
-            values: lengthCrisis
+            values: lengthCrisis,
+            axisID: "right-axis",
           },
           {
             name: "Funding requested",
             chartType: "bar",
-            values: fundingReq
+            values: fundingReq,
+            
           },
           {
             name: "Funding received",
             chartType: "bar",
-            values: fundingReceiv
+            values: fundingReceiv,
+           
           }
 
         ]
       }
+     
 
 
       const data_targeted = {
@@ -1400,8 +1404,22 @@
 
           barOptions: {
             stacked: 1
-          }
+          },
+          yAxis: [
+          {
+              id: 'left-axis',
+              position: 'left',
+              unit: 4,
+              
+          },
+          {
+              id: 'right-axis',
+              position: 'right',
+              count: 4,
 
+            
+          }
+      ],
         });
 
         const country_people_concern_charts = new frappe.Chart("#chart-people-concern-" + renderIt, { // or a DOM element,

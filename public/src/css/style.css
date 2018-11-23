@@ -996,3 +996,14 @@ td.percentagefigure {
   transform: rotate(90deg);
   background-color: #212529;
 }
+
+
+/* Parallex Images */
+
+
+#first_parallex {
+	background:  url('../img/cbpf02.jpg') center center / cover fixed no-repeat rgba(0,0,0,1);
+}
+#second_parallex {
+	background:  url('../img/attack-health02.jpg') center center / cover fixed no-repeat rgba(0,0,0,1);
+}
