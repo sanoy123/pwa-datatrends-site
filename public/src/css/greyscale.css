@@ -73,5 +73,30 @@ section{
     -webkit-filter: grayscale(100%); 
     filter: grayscale(100%);  
 }
-
+.hdxChart{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+}
+#funding-tables{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+}
+.crises-modal{
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+}
+.crises-modal .modal-dialog {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+  }
+  
+  .crises-modal .modal-content {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+  }  
+  .crises-modal .close-modal {
+    -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);  
+  }
+  
 

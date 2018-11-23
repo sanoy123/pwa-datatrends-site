@@ -7,7 +7,7 @@ button {
     background-color: yellow !important;
 }
 a:hover,
-a: active,
+a:active,
 button:hover,
 button:active,
 button:focus,
