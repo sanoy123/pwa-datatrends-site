@@ -181,11 +181,11 @@
 
       <div id="at-a-glance-charts" class="row">
         <div id="funding-trend" class="col2">
-          <h4 data-localize="funding-trend-text">Number of Inter-agency appeals & average length of crises</h4>
+          <h4 data-localize="funding-trend-text">Number of Inter-agency appeals & average length of crises (YEARS)</h4>
           <div id="nubmer-inter-agency"></div>
         </div>
         <div id="peopletargeted-trend" class="col2">
-          <h4 data-localize="peopletargeted-trend-text">Funding received by appeal length (US $ billion)</h4>
+          <h4 data-localize="peopletargeted-trend-text">Funding received by appeal length (US $ million)</h4>
           <div id="requested-by-appeal"></div>
         </div>
       </div>
@@ -197,11 +197,11 @@
 
       <div id="at-a-glance-charts" class="row">
         <div id="funding-trend" class="col2">
-          <h4 data-localize="funding-trend-text">People requested by appeal length (US $ billion)</h4>
+          <h4 data-localize="funding-trend-text">People requested by appeal length (US $ million)</h4>
           <div id="received-by-appeal"></div>
         </div>
         <div id="peopletargeted-trend" class="col2">
-          <h4 data-localize="peopletargeted-trend-text">Funding targeted by appeal length (Millions)</h4>
+          <h4 data-localize="peopletargeted-trend-text">Funding targeted by appeal length (US $ million)</h4>
           <div id="targeted-by-appeal"></div>
         </div>
       </div>
@@ -1290,6 +1290,19 @@
     }
   </script>
   <script>
+      function nFormatter(num) {
+         //console.log(num);
+          if (num >= 1000000000) {
+              return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
+          }
+          if (num >= 1000000) {
+              return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+          }
+          if (num >= 1000) {
+              return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+          }
+          return num;
+      }
     function drawDetailChart(chartType, data, renderIt) {
 
       let targeted = [],
@@ -1318,7 +1331,7 @@
         mortality.push(formatFloat(Number(data[d]['#indicator+under5_mort'])));
 
       }
-      console.log(lengthCrisis);
+     // console.log(lengthCrisis);
       const data_funding = {
         labels: dates,
         datasets: [{
@@ -1390,7 +1403,10 @@
           data: data_targeted,
           type: chartType, // or 'bar', 'line', 'scatter', 'pie', 'percentage'
           height: 350,
-
+          tooltipOptions: {
+                formatTooltipX: d => (d + '').toUpperCase(),
+                formatTooltipY: d => nFormatter(d),
+            },
           colors: ["#FA575C", "#0F6FB5"],
           barOptions: {
             stacked: 0
@@ -1404,7 +1420,10 @@
           type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
           height: 350,
           colors: ["#758D91", "#FA575C", '#0F6FB5'],
-
+          tooltipOptions: {
+                formatTooltipX: d => (d + '').toUpperCase(),
+                formatTooltipY: d => nFormatter(d),
+            },
           lineOptions: {
             dotSize: 8
           },
@@ -1428,7 +1447,7 @@
           }
       ],
         });
-
+        
         const country_people_concern_charts = new frappe.Chart("#chart-people-concern-" + renderIt, { // or a DOM element,
           // new Chart() in case of ES6 module with above usage
           title: "",
@@ -1437,6 +1456,10 @@
           height: 350,
 
           colors: ["#FA575C", "#0F6FB5"],
+          tooltipOptions: {
+                formatTooltipX: d => (d + '').toUpperCase(),
+                formatTooltipY: d => nFormatter(d),
+            },
           barOptions: {
             stacked: 0
           }
@@ -1450,6 +1473,14 @@
           height: 350,
 
           colors: ["#FA575C", "#0F6FB5"],
+
+          tooltipOptions: {
+                formatTooltipX: d => (d + '').toUpperCase(),
+                formatTooltipY: d => nFormatter(d),
+            },
+
+         
+         
           barOptions: {
             stacked: 0
           }
@@ -1463,6 +1494,12 @@
           height: 350,
 
           colors: ["#FA575C", "#0F6FB5"],
+          tooltipOptions: {
+                formatTooltipX: d => (d + '').toUpperCase(),
+                formatTooltipY: d => nFormatter(d),
+            },
+
+          
           barOptions: {
             stacked: 0
           }
@@ -1477,6 +1514,9 @@
 
 
     }
+    
+
+ 
   </script>
 
 </body>
