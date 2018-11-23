@@ -509,7 +509,7 @@ figure{
 @media (min-width: 992px) {
   .impact-protracted-crisis-section .featured-text {
     padding: 0 0 0 2rem;
-    border-left: 0.5rem solid #FA575C;
+   /* border-left: 0.5rem solid #FA575C;*/
   }
   .impact-protracted-crisis-section .featured-text2 {
     padding: 0 0 0 2rem;
