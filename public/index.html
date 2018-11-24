@@ -51,7 +51,7 @@
           </li>
         </ul>
         <a class="accessibility-button" data-toggle="modal" data-target="#accessibility">
-          <i class="fas fa-wheelchair"></i>
+          <i class="fab fa-accessible-icon"></i>
         </a>
       </div>
     </div>
@@ -128,7 +128,7 @@
   </section>
 
   <section class="wow slideInUp ">
-      <div class="big-photo" id="first_parallex"></div>
+    <div class="big-photo" id="first_parallex"></div>
   </section>
 
   <!-- Big Image with caption 
@@ -256,8 +256,8 @@
 
   </section>
 
-  <section  class="wow slideInUp ">
-      <div class="big-photo" id="second_parallex"></div>
+  <section class="wow slideInUp ">
+    <div class="big-photo" id="second_parallex"></div>
   </section>
 
   <!-- Impact Protracted Crisis Section -->
@@ -669,6 +669,8 @@
             <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> <a id="btnUnderline">Underline
                 Links</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> <a id="btnDefault">Default
                 Links</a></li>
+            <li class="list-group-item"><a href="javascript:resizeText('minus')"><i class="fa fa-font" title="Normal font" aria-hidden="true"></i><sup>-</sup></a>&nbsp;&nbsp;<a
+                href="javascript:resizeText('add')"><i class="fa fa-2x fa-font" title="Larger font" aria-hidden="true"></i><sup>+</sup></a> </li>
 
           </ul>
         </div>
@@ -1130,9 +1132,9 @@
           '<div class="container-fluid mx-auto">' +
           '<div class="modal-body">' +
           '<div class="container-fluid">' +
-          
-          '<h2 class="text mb-4 text-center">' + crisesGroup[i].key + '</h2>' +
-       
+
+          '<h1 class="text mb-4 text-center">' + crisesGroup[i].key + '</h1>' +
+
           '<div class="row">' +
           '<div class="col-md-4">' +
           '<h4 class="text-left">Funding</h4>' +
@@ -1179,12 +1181,12 @@
 
 
           '</div>' +
-          
+
           '<button class="btn btn-primary" data-dismiss="modal" type="button">' +
           '<i class="fas fa-times"></i>' +
           'Close</button>' +
 
-      
+
           '</div>' +
 
 
@@ -1290,19 +1292,20 @@
     }
   </script>
   <script>
-      function nFormatter(num) {
-         //console.log(num);
-          if (num >= 1000000000) {
-              return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
-          }
-          if (num >= 1000000) {
-              return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-          }
-          if (num >= 1000) {
-              return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
-          }
-          return num;
+    function nFormatter(num) {
+      //console.log(num);
+      if (num >= 1000000000) {
+        return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'G';
       }
+      if (num >= 1000000) {
+        return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+      }
+      if (num >= 1000) {
+        return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+      }
+      return num;
+    }
+
     function drawDetailChart(chartType, data, renderIt) {
 
       let targeted = [],
@@ -1331,7 +1334,7 @@
         mortality.push(formatFloat(Number(data[d]['#indicator+under5_mort'])));
 
       }
-     // console.log(lengthCrisis);
+      // console.log(lengthCrisis);
       const data_funding = {
         labels: dates,
         datasets: [{
@@ -1344,18 +1347,18 @@
             name: "Funding requested",
             chartType: "bar",
             values: fundingReq,
-            
+
           },
           {
             name: "Funding received",
             chartType: "bar",
             values: fundingReceiv,
-           
+
           }
 
         ]
       }
-     
+
 
 
       const data_targeted = {
@@ -1404,9 +1407,9 @@
           type: chartType, // or 'bar', 'line', 'scatter', 'pie', 'percentage'
           height: 350,
           tooltipOptions: {
-                formatTooltipX: d => (d + '').toUpperCase(),
-                formatTooltipY: d => nFormatter(d),
-            },
+            formatTooltipX: d => (d + '').toUpperCase(),
+            formatTooltipY: d => nFormatter(d),
+          },
           colors: ["#FA575C", "#0F6FB5"],
           barOptions: {
             stacked: 0
@@ -1421,9 +1424,9 @@
           height: 350,
           colors: ["#758D91", "#FA575C", '#0F6FB5'],
           tooltipOptions: {
-                formatTooltipX: d => (d + '').toUpperCase(),
-                formatTooltipY: d => nFormatter(d),
-            },
+            formatTooltipX: d => (d + '').toUpperCase(),
+            formatTooltipY: d => nFormatter(d),
+          },
           lineOptions: {
             dotSize: 8
           },
@@ -1431,23 +1434,22 @@
           barOptions: {
             stacked: 1
           },
-          yAxis: [
-          {
+          yAxis: [{
               id: 'left-axis',
               position: 'left',
               unit: 4,
-              
-          },
-          {
+
+            },
+            {
               id: 'right-axis',
               position: 'right',
               count: 4,
 
-            
-          }
-      ],
+
+            }
+          ],
         });
-        
+
         const country_people_concern_charts = new frappe.Chart("#chart-people-concern-" + renderIt, { // or a DOM element,
           // new Chart() in case of ES6 module with above usage
           title: "",
@@ -1457,9 +1459,9 @@
 
           colors: ["#FA575C", "#0F6FB5"],
           tooltipOptions: {
-                formatTooltipX: d => (d + '').toUpperCase(),
-                formatTooltipY: d => nFormatter(d),
-            },
+            formatTooltipX: d => (d + '').toUpperCase(),
+            formatTooltipY: d => nFormatter(d),
+          },
           barOptions: {
             stacked: 0
           }
@@ -1475,12 +1477,12 @@
           colors: ["#FA575C", "#0F6FB5"],
 
           tooltipOptions: {
-                formatTooltipX: d => (d + '').toUpperCase(),
-                formatTooltipY: d => nFormatter(d),
-            },
+            formatTooltipX: d => (d + '').toUpperCase(),
+            formatTooltipY: d => nFormatter(d),
+          },
 
-         
-         
+
+
           barOptions: {
             stacked: 0
           }
@@ -1495,11 +1497,11 @@
 
           colors: ["#FA575C", "#0F6FB5"],
           tooltipOptions: {
-                formatTooltipX: d => (d + '').toUpperCase(),
-                formatTooltipY: d => nFormatter(d),
-            },
+            formatTooltipX: d => (d + '').toUpperCase(),
+            formatTooltipY: d => nFormatter(d),
+          },
 
-          
+
           barOptions: {
             stacked: 0
           }
@@ -1511,12 +1513,41 @@
       })
 
 
-
+     
 
     }
-    
-
+    function resizeText(multiplier) {
  
+
+        if( multiplier == 'add'){
+            $(".text-50, .nav-link, .hdxChart, .sources, .country-row, .text-black-50, .card-body, .modal-body, .list-group-item, .text > *").each( function(index){
+                $(this).css( {
+                    "font-size": function(index, value) {
+                      if(parseFloat(value) <= 30 )
+                        return parseFloat(value) * 1.1;
+                  }
+                });
+            });
+
+        } else{
+              $(".text-50, .nav-link, .hdxChart, .sources, .country-row, .text-black-50, .card-body, .modal-body, .list-group-item, .text > *").each( function(index){
+                $(this).css( {
+                    "font-size": function(index, value) {
+                      if(parseFloat(value) > 20 )
+                        return parseFloat(value) / 1.1;
+                  }
+                });
+            });
+
+        }    
+  
+
+
+
+
+
+
+  }
   </script>
 
 </body>
