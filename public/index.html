@@ -593,22 +593,26 @@
           </button>
         </div>
         <div class="modal-body">
-          <ul class="list-group">
-            <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> <a id="btnHighContrast">High
-                Contrast</a> &nbsp;
-              &nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> <a id="btnNormalContrast">Normal Contrast</a></li>
-            <li class="list-group-item"><i class="fas fa-link text-primary"></i> <a id="btnYellowLinks">Yellow Links</a>
-              &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-link"></i> <a id="btnNormalLinks">Normal Links</a></i></li>
-            <li class="list-group-item"><i class="fas fa fa-barcode text-primary" aria-hidden="true"></i> <a id="btnGreyScale">Grayscale
-                Mode</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> <a id="btnRegularColor">Regular
-                Mode</a></li>
-            <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> <a id="btnUnderline">Underline
-                Links</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> <a id="btnDefault">Default
-                Links</a></li>
-            <li class="list-group-item"><a href="javascript:resizeText('minus')"><i class="fa fa-font" title="Normal font"
-                  aria-hidden="true"></i><sup>-</sup></a>&nbsp;&nbsp;<a href="javascript:resizeText('add')"><i class="fa fa-2x fa-font"
-                  title="Larger font" aria-hidden="true"></i><sup>+</sup></a> </li>
-          </ul>
+        <ul class="list-group">
+          <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2"></i> <a id="btnHighContrast">High
+              Contrast</a> &nbsp;
+            &nbsp;&nbsp;<i class="fa fa-adjust" aria-hidden="true"></i> <a id="btnNormalContrast">Normal Contrast</a></li>
+          <li class="list-group-item"><i class="fas fa-link text-primary"></i> <a id="btnYellowLinks">Yellow Links</a>
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-link"></i> <a id="btnNormalLinks">Normal Links</a></i></li>
+          <li class="list-group-item"><i class="fas fa fa-barcode text-primary" aria-hidden="true"></i> <a id="btnGreyScale">Grayscale
+              Mode</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-barcode" aria-hidden="true"></i> <a id="btnRegularColor">Regular
+              Mode</a></li>
+          <li class="list-group-item"><i class="fas fa fa-underline text-primary" aria-hidden="true"></i> <a id="btnUnderline">Underline
+              Links</a> &nbsp;&nbsp;&nbsp;<i class="fa fa-underline" aria-hidden="true"></i> <a id="btnDefault">Default
+              Links</a></li>
+          <li class="list-group-item"><i class="fas fa fa-adjust text-primary mb-2" aria-hidden="true"></i> <a id="btnText">Text
+              color contrast
+            </a> &nbsp;&nbsp;&nbsp;<i class="fas fa-adjust" aria-hidden="true"></i> <a id="btnTextNormal">Normal text color
+            </a></li>
+          <li class="list-group-item"><a href="javascript:resizeText('minus')"><i class="fa fa-font" title="Normal font"
+                aria-hidden="true"></i><sup>-</sup></a>&nbsp;&nbsp;<a href="javascript:resizeText('add')"><i class="fa fa-2x fa-font"
+                title="Larger font" aria-hidden="true"></i><sup>+</sup></a> </li>
+        </ul>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
@@ -667,6 +671,10 @@
 
   <!-- Accessibility Script-->
   <script>
+
+    
+
+    
     document.getElementById('btnHighContrast').addEventListener('click', function () {
 
       $("<link/>", {
@@ -692,6 +700,16 @@
         title: "underline"
       }).appendTo("head");
     });
+    document.getElementById('btnText').addEventListener('click', function () {
+      $("<link/>", {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "src/css/text-color-contrast.css",
+        title: "underline"
+      }).appendTo("head");
+    });
+
+
     document.getElementById('btnDefault').addEventListener('click', function () {
       $("LINK[href*='src/css/underline-links.css']").remove();
     });
@@ -709,6 +727,9 @@
 
     document.getElementById('btnNormalContrast').addEventListener('click', function () {
       $("LINK[href*='src/css/high-contrast.css']").remove();
+    });
+    document.getElementById('btnTextNormal').addEventListener('click', function () {
+      $("LINK[href*='src/css/text-color-contrast.css']").remove();
     });
     document.getElementById('btnNormalLinks').addEventListener('click', function () {
       $("LINK[href*='css/yellow-links.css']").remove();
