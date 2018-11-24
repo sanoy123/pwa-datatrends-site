@@ -681,6 +681,17 @@ h2:before {
 h4{
   text-transform: uppercase;
 }
+.footer-header{
+  font-size: 42px;
+  line-height: 46px;
+  font-weight: 900;
+  text-transform: uppercase;
+  
+  font-family: 'Roboto Condensed',sans-serif;
+}
+.footer-header:before{
+  display: none;
+}
 .bg-black {
   background-color: #161616 !important;
 }
