@@ -772,6 +772,25 @@ p.sources {
   margin-top: 30px;
   text-align: left;
 }
+p.caption {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+  padding-top: 10px;
+  margin-bottom: 0px;
+  border-bottom: 1px solid rgba(232, 83, 86, 1);
+  margin-top: 30px;
+  text-align: left;
+}
+p.caption_no_border {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+  padding-top: 10px;
+  margin-bottom: 0px;
+   margin-top: 30px;
+  text-align: left;
+}
 
 footer {
   padding: 5rem 0;
