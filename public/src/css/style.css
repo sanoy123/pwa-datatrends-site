@@ -1014,8 +1014,19 @@ td.percentagefigure {
 
 /* Parallex Images */
 .sub-section{
-  padding-top: 5em;
+  padding-top: 5rem;
 }
+
+h3 {
+  font-size: 2rem !important;
+  line-height: 40px !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #FA575C;
+  font-family: 'Roboto Condensed',sans-serif;
+  
+}
+
 
 #first_parallex {
 	background:  url('../img/hero.jpg') center center / cover fixed no-repeat rgba(0,0,0,1);
