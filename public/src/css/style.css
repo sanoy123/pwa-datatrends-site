@@ -1007,10 +1007,15 @@ td.percentagefigure {
   transform: rotate(90deg);
   background-color: #212529;
 }
-
+.row{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
 
 /* Parallex Images */
-
+.sub-section{
+  padding-top: 5em;
+}
 
 #first_parallex {
 	background:  url('../img/hero.jpg') center center / cover fixed no-repeat rgba(0,0,0,1);
