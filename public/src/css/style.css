@@ -299,6 +299,12 @@ figure{
     float: none;
     margin-right: 0;
   }
+  #first_parallex {
+    background:  url('../img/hero.jpg') center top / cover scroll no-repeat !important;
+  }
+  #second_parallex {
+    background:  url('../img/attack-health02.jpg') center top / cover scroll no-repeat !important;
+  }
 }
 
 @media (max-width:900px) {
@@ -315,7 +321,13 @@ figure{
 	.table-info .iconarea {
 		clear:both;
 		padding-top:30px;
-	}
+  }
+  #first_parallex {
+    background:  url('../img/hero.jpg') center top / cover scroll no-repeat !important;
+  }
+  #second_parallex {
+    background:  url('../img/attack-health02.jpg') center top / cover scroll no-repeat !important;
+  }
 }
 @media (max-width:720px) {
 	#funding-tables tr {
@@ -354,7 +366,16 @@ figure{
 	td.percentagefigure {
 		display: none !important;
   }
+  .country-row .fas {
+    display: none !important;
+  }
 
+  #first_parallex {
+	background:  url('../img/hero.jpg') center top / cover scroll no-repeat !important;
+}
+#second_parallex {
+	background:  url('../img/attack-health02.jpg') center top / cover scroll no-repeat !important;
+}
   
   .percent{
     display: none !important;
