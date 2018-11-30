@@ -103,7 +103,7 @@
   </header>
 
   <!-- Introduction Section -->
-  <section id="introduction" class="introduction-section text-center">
+  <section id="introduction" class="introduction-section text-center scroll-fade-content">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto ">
@@ -120,7 +120,7 @@
   </section>
 
   <!-- Protracted Crisis Section -->
-  <section id="protracted-crisis" class="protracted-crisis-section text-center">
+  <section id="protracted-crisis" class="protracted-crisis-section text-center scroll-fade-content">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto ">
@@ -160,10 +160,10 @@
         </div>
       </div>
     </div>
-    <div class="wrapper text-center" id="cumulative-apppeal">
-      <div class="container">
+    <div class="wrapper" id="cumulative-apppeal">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
+          <div class="col1 mx-auto">
             <h4 data-localize="funding-trend-text">Crises by number of cumulative appeals</h4>
             <p class="text-50">Data runs until 2016, which is the most recent year for which complete data was available at the time of publication. To find out more details about each crisis, click on the country name. </p>
 
@@ -199,11 +199,13 @@
           </tbody>
         </table>
         
-        <p class="sources" id="overview-source" data-localize="overview_sources"><span>Powered by <a  aria-label="HDX"  href="https://data.humdata.org/dataset/world-humanitarian-data-and-trends"
-              target="_blank"><img alt="HDX logo"src="src/img/HDX-logo-home.svg" class="hdx"></a></span><br>To find out more about
-          the state of current crises, visit <i>Humanitarian Insights</i> (<a href="https://www.hpc.tools/" target="_blank">https://www.hpc.tools/</a>)</p>
+        <p class="sources" id="overview-source" data-localize="overview_sources">Powered by <a  aria-label="HDX"  href="https://data.humdata.org/dataset/world-humanitarian-data-and-trends"
+              target="_blank"><img alt="HDX logo"src="src/img/HDX-logo-home.svg" class="hdx"></a>To find out more about
+          the state of current crises, visit <i>Humanitarian Insights</i> <span class="footer-link">(<a href="https://www.hpc.tools/" target="_blank">https://www.hpc.tools/</a>)</span></p>
       </div>
-      <button class="button btn btn-primary">show more</button>
+      <div class="text-center">
+      <button class="text-center button btn btn-primary">show more</button>
+      </div>
   </section>
 
 
@@ -1354,7 +1356,7 @@
     }
   </script>
   <script>
-        var defaultHeight = 440;
+        var defaultHeight = 436;
         var text = $("#funding-tables");
         var textHeight = text[0].scrollHeight;
         var button = $(".button");

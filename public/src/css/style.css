@@ -135,7 +135,7 @@ figure{
 }
 
 .right-side{
-  padding-top: 60px;
+  padding-top: 70px;
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -947,7 +947,7 @@ td.percentagefigure {
   transform: rotate(45deg);
 }
 #funding-tables{
-  height: 1870px;
+  height: 1904px;
  
 }
 
@@ -961,7 +961,9 @@ td.percentagefigure {
   font-family: 'Roboto',sans-serif;
   color: rgb(182, 188, 198);
 }
-
+.footer-link a {
+  font-size: 14px !important;
+}
 /*------ FRAPPE -----*/
 .graph-svg-tip.comparison * {
 	font-family:'Roboto', sans-serif;
