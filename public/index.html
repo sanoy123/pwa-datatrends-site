@@ -19,7 +19,7 @@
   <!-- Custom styles  -->
   <link href="src/css/slider.css" rel="stylesheet">
   <link href="src/css/style.css" rel="stylesheet">
-  <link href="src/css/c3.css" rel="stylesheet">
+
   <link rel="manifest" href="/manifest.json">
 </head>
 
@@ -172,7 +172,7 @@
         </div>
       </div>
       <div id="funding-tables">
-        <table id="crises" class="scroll-fade-content">
+        <table id="crises">
           <thead>
             <tr class="header-row">
               <td class="country-name"></td>
@@ -256,7 +256,7 @@
               <img alt="Attack on education" src="src/img/attack_health01.png" class="img-fluid">             
             </div>            
             <div class="container">
-                <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/downloads/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></span></p>
+                <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/resources/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></span></p>
             </div>
           </div>
         </div>
@@ -338,11 +338,11 @@
         </div>
       </div>
       <div class="row justify-content-center no-gutters">
-          <div class="col1 order-lg-first scroll-fade-content">
+          <div class="col1 order-lg-first">
             <img alt="Attack on education" src="src/img/number-of-partners.png" class="img-fluid">             
           </div>            
           <div class="container">
-              <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/downloads/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></span></p>
+              <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/resources/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></span></p>
           </div>
         </div>
 <!--
@@ -394,7 +394,7 @@
           <div class="row">
               <div class="col1 mx-auto">
               <img alt="Timeline Image" src="src/img/timeline01.png" class="img-fluid">
-              <p class="caption_no_border text-right scroll-fade-content"><a href="src/downloads/idetect-nigeria.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></p>
+              <p class="caption_no_border text-right scroll-fade-content"><a href="src/resources/idetect-nigeria.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></p>
               <p class="sources scroll-fade-content">To find out more about the current humanitarian response in Nigeria, visit Humanitarian Insights <a href="https://www.hpc.tools/plan/642" target="_blank">https://www.hpc.tools/plan/642</a></p>
               </div>
           </div>
@@ -440,9 +440,11 @@
             <div class="col-md-2  col-sm-4 mb-3 mb-md-0">
               <div class="card py-4 h-100">
                 <div class="card-body text-center">
-                  <i class="fas fa-file-pdf text-primary mb-2"></i>
-                  <h4 class="text-uppercase m-0">Highlights</h4>
-                  <hr class="my-4">
+                  <a href="src/resources/WHDT_2018_Highlights.pdf" target="_blank">
+                    <i class="fas fa-file-pdf text-primary mb-2"></i>
+                    <h4 class="text-uppercase m-0">Highlights</h4>
+                    <hr class="my-4">
+                  </a>                  
                 </div>
               </div>
             </div>
@@ -450,9 +452,11 @@
             <div class="col-md-2  col-sm-4 mb-3 mb-md-0">
               <div class="card py-4 h-100">
                 <div class="card-body text-center">
-                  <i class="fas fa-globe-africa text-primary mb-2"></i>
-                  <h4 class="text-uppercase m-0">Global Landscape</h4>
-                  <hr class="my-4">
+                  <a href="src/resources/WHDT_2018_Global_Landscape.pdf" target="_blank">
+                    <i class="fas fa-globe-africa text-primary mb-2"></i>
+                    <h4 class="text-uppercase m-0">Global Landscape</h4>
+                    <hr class="my-4">
+                  </a>
                 </div>
               </div>
             </div>
@@ -594,7 +598,6 @@
       </div>
     </div>
   </div>
-
   <!-- Bootstrap core JavaScript -->
   <script src="src/vendor/jquery/jquery.min.js"></script>
   <script src="src/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -618,9 +621,7 @@
 
   <!-- D3 -->
   <script src="src/js/d3.min.js"></script>
-
-  <!-- C3 -->
-  <script src="src/js/c3.min.js"></script>
+  
 
   <!-- Crossfilter -->
   <script src="src/js/crossfilter.v1.min.js"></script>
@@ -979,7 +980,7 @@
       });
       crisesGroup = crisesDim.group().reduceCount().all();     
      
-    console.log(crisesGroup);
+    //console.log(crisesGroup);
       html = '';
       for (i = 0; i < crisesGroup.length; i++) {
         html += '<tr id="" class="country-row">' +
@@ -1109,7 +1110,6 @@
     function drawDetailChart(chartType, data, renderIt) {
       let targeted = [],
         dates = [],
-        
         fundingReq = [],
         fundingReceiv = [],
         lengthCrisis = [],
@@ -1119,7 +1119,6 @@
 
       for (d in data) {
         dates.push(Number(data[d]['#date+year']));
-   
         targeted.push(Number(data[d]['#inneed+targeted']));
         fundingReq.push(Number(data[d]['#funding+requirements']));
         fundingReceiv.push(Number(data[d]['#funding+received']));
@@ -1186,9 +1185,7 @@
           values: mortality
         }]
       }
-      var formatFundings = function (d) {
-          return d3.format(',.2s')(d).replace('G', 'B');
-      };
+
 
       $('#modal-' + renderIt).on('shown.bs.modal', function (e) {
         const country_targeted_charts = new frappe.Chart("#chart-targeted-" + renderIt, { // or a DOM element,          
@@ -1200,85 +1197,40 @@
             formatTooltipX: d => (d + '').toUpperCase(),
             formatTooltipY: d => nFormatter(d),
           },
-          colors: ["#FA575C", "#0F6FB5", "#0F6FB5"],
+          colors: ["#FA575C", "#0F6FB5"],
           barOptions: {
             stacked: 0
           }
         });
 
-        var funding_chart_country = c3.generate({
-        bindto: '#chart-funding-'+renderIt,
-        size: {
-            height: 370
-        },
-        color: {
-            pattern: ["#FA575C", "#0F6FB5","#000000"]
-        },
-        data: {
-          x: 'x',
-            columns: [date, fundingReq, fundingReceiv, lengthCrisis],
-            axes: {
-                'Consecutive length of appeals': 'y2'
+        const country_funding_chart = new frappe.Chart("#chart-funding-" + renderIt, { // or a DOM element,          
+          title: "",
+          data: data_funding,
+          type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
+          height: 350,
+          colors: ["#758D91", "#FA575C", '#0F6FB5'],
+          tooltipOptions: {
+            formatTooltipX: d => (d + '').toUpperCase(),
+            formatTooltipY: d => nFormatter(d),
+          },
+          lineOptions: {
+            dotSize: 8
+          },
+          barOptions: {
+            stacked: 1
+          },
+          yAxis: [{
+              id: 'left-axis',
+              position: 'left',
+              unit: 4,
             },
-            types: {
-                'Funding requested': 'bar',
-                'Funding received': 'bar'
-            },
-            groups: [
-                ['Funding requested', 'Funding received']
-            ]
-        },
-        axis: {
-            x: {
-                tick: {
-                    centered: true,
-                    outer: false
-                }
-            },
-            y: {
-                label: {
-                    text: 'US$ million',
-                },
-                tick: {
-                    count: 4,
-                    format: formatFundings,
-                },
-                show: true,
-                padding: {
-                    bottom: 0
-                }
-            },
-            y2: {
-                tick: {
-                    count: 4,
-                    values:[2,5,8,12]
-
-                },
-                show: true,
-                padding: {
-                    bottom: 0
-                },
-                min: 0
+            {
+              id: 'right-axis',
+              position: 'right',
+              count: 4,
             }
-        },
-        legend: { hide: false },
-        padding: {bottom: 10, top: 10}
-        // tooltip:{
-        //     format: {
-        //         value: function(value, ratio, id ){
-        //             var format = (id === 'Funding requested' || id === 'Funding received') ? formatMillion : d3.format("d");
-        //             return format(value);
-        //         }
-        //     }
-        // }
-
-    });
-
-
-
-
-
-
+          ],
+        });
 
         const country_people_concern_charts = new frappe.Chart("#chart-people-concern-" + renderIt, { // or a DOM element,
           title: "",
@@ -1358,7 +1310,7 @@
     }
   </script>
   <script>
-        var defaultHeight = 436;
+        var defaultHeight = 410;
         var text = $("#funding-tables");
         var textHeight = text[0].scrollHeight;
         var button = $(".button");
