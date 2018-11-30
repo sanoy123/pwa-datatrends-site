@@ -134,7 +134,10 @@ figure{
   transform: translateY(0);
 }
 
-
+.right-side{
+  padding-top: 60px;
+  background: rgba(0, 0, 0, 0.1);
+}
 
 #mainNav {
   min-height: 56px;
