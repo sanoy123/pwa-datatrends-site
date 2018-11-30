@@ -358,7 +358,10 @@ figure{
 		text-indent:25px;
 		font-weight:700;
 	}
-
+  #funding-tables{
+    height: 2280px !important;
+   
+  }
 
 	td.percentagebar {
 		display: none !important;
@@ -367,6 +370,9 @@ figure{
 		display: none !important;
   }
   .country-row .fas {
+    display: none !important;
+  }
+  .screen {
     display: none !important;
   }
 
@@ -417,9 +423,9 @@ figure{
 .btn {
   -webkit-box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
-  padding: 1.25rem 2rem;
+  padding: .375rem .75rem;
   font-family: 'Roboto Condensed',sans-serif;
-  font-size: 80%;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .15rem;
   border: 0;
@@ -427,6 +433,7 @@ figure{
 
 .btn-primary {
   background-color: #FA575C;
+  color: #ffffff !important;
 }
 
 .btn-primary:hover {
@@ -471,18 +478,13 @@ figure{
  
 }
 
-.impact-protracted-crisis-section p {
-  margin-bottom: 5rem;
-}
 
 .opportunity-for-improve-section {
-  padding-top: 10rem;
+  padding-top: 5rem;
   
 }
 
-.opportunity-for-improve-section p {
-  margin-bottom: 5rem;
-}
+
 .opportunity-for-improve-section .big-photo{
   margin-bottom: 5rem;
 }
@@ -737,7 +739,7 @@ h4{
 .hdxChart h4 {
   text-transform: uppercase;
   font-family: 'Roboto Condensed',sans-serif;
-  font-size: 16px;
+  font-size: 19px;
   padding-bottom: 5px;
   font-weight: 700;
   border-bottom: 1px solid rgba(232, 83, 86, 1)
@@ -897,7 +899,9 @@ td.percentagefigure {
   font-weight: 700;
   color: rgb(232, 83, 86);
 }
-
+.screen {
+  display: none !important;
+}
 .outerbar {
   width: 100%;
   height: 16px;
@@ -939,7 +943,10 @@ td.percentagefigure {
   left: 29.85%;
   transform: rotate(45deg);
 }
-
+#funding-tables{
+  height: 1870px;
+ 
+}
 
 .content-info {
   margin-bottom: 30px;

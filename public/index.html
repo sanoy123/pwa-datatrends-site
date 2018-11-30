@@ -19,6 +19,7 @@
   <!-- Custom styles  -->
   <link href="src/css/slider.css" rel="stylesheet">
   <link href="src/css/style.css" rel="stylesheet">
+  <link href="src/css/c3.css" rel="stylesheet">
   <link rel="manifest" href="/manifest.json">
 </head>
 
@@ -39,10 +40,10 @@
             <a class="nav-link js-scroll-trigger" href="#introduction">Introduction</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#protracted-crisis">Protracted&nbsp;crisis</a>
+            <a class="nav-link js-scroll-trigger" href="#protracted-crisis">Protracted&nbsp;crises</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#impact-protracted-crisis">Impact&nbsp;of&nbsp;protracted&nbsp;crisis</a>
+            <a class="nav-link js-scroll-trigger" href="#impact-protracted-crisis">Impact&nbsp;of&nbsp;protracted&nbsp;crises</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#improve-humanitarian-action">Opportunities&nbsp;for&nbsp;improving&nbsp;action</a>
@@ -61,6 +62,7 @@
 
   <!-- Header -->
   <header class="header">
+      <div class="screen" style="position:absolute; width:100%; height:100%; z-index:100	; background:rgba(0,0,0,0.5); background-blend-mode:multiply;"></div>
     <ul class="cb-slideshow container">
       <li>
         <div class="container d-flex h-100 align-items-center">
@@ -106,10 +108,7 @@
       <div class="row">
         <div class="col-lg-8 mx-auto ">
           <h2 class="text mb-4">Introduction</h2>
-          <p class="text-50">World Humanitarian Data and Trends (WHDT) 2018 highlights major trends in the nature of
-            humanitarian crises, their causes and drivers. This year’s report includes case studies on the evolution of
-            protracted crises, attacks on health care, attacks on education, water and conflict, and strengthening
-            local action through country-based pooled funds. </p>
+          <p class="text-50">World Humanitarian Data and Trends (WHDT) 2018 highlights major trends in the nature of humanitarian crises, their causes and drivers. This year’s report includes case studies on the evolution of protracted crises, attacks on health care, attacks on education, water and conflict, and strengthening local action through country-based pooled funds.  </p>
         </div>
       </div>
     </div>
@@ -125,17 +124,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mx-auto ">
-          <h2 class="text mb-4">Protracted Crisis</h2>
-          <p class="text-50">Humanitarian crises are increasing in number and in duration. Since 2005, the average
-            length of crises with an active inter-agency appeal rose from four to seven years in 2017, while the number
-            of active crises receiving an internationally-led response almost doubled from 16 in 2005 to 30 in 2017.
-            These trends are also reflected in the steady growth of people in need and people targeted for assistance.
-            The majority of people targeted receive assistance for five years or more (nearly 60 per cent). Since 2015,
-            appeals for crises lasting five years or longer have spiked and now command most funding received and
-            requested (80 per cent, compared to approximately 30 per cent in 2015). In the absence of political
-            solutions to long-standing crises, these trends are likely to increase, with humanitarians staying longer
-            in crisis situations, emphasizing the need for closer cooperation and collaboration between humanitarian
-            and development actors to decrease vulnerability in the long term.</p>
+          <h2 class="text mb-4">Protracted crises</h2>
+          <p class="text-50">Humanitarian crises are increasing in number and in duration. Since 2005, the average length of crises with an active inter-agency appeal rose from four to seven years in 2017, while the number of active crises receiving an internationally-led response almost doubled from 16 in 2005 to 30 in 2017. These trends are also reflected in the steady growth of people in need and people targeted for assistance. The majority of people targeted receive assistance for five years or more (nearly 60 per cent). Since 2015, appeals for crises lasting five years or longer have spiked and now command most funding received and requested (80 per cent, compared to approximately 30 per cent in 2015). In the absence of political solutions to long-standing crises, these trends are likely to increase, with humanitarians staying longer in crisis situations, emphasizing the need for closer cooperation and collaboration between humanitarian and development actors to decrease vulnerability in the long term.
+            </p>
           <!--<a href="https://www.hpc.tools/" target="_blank" class="btn btn-primary js-scroll-trigger">More on HPC Viewer</a>-->
         </div>
       </div>
@@ -160,11 +151,11 @@
     <div class="wrapper">
       <div id="at-a-glance-charts" class="row">
         <div id="funding-trend" class="col2">
-          <h4 data-localize="funding-trend-text">People requested by appeal length (US $ million)</h4>
+          <h4 data-localize="funding-trend-text">Funding requested by appeal length (US $ million)</h4>
           <div id="received-by-appeal"></div>
         </div>
         <div id="peopletargeted-trend" class="col2">
-          <h4 data-localize="peopletargeted-trend-text">Funding targeted by appeal length (US $ million)</h4>
+          <h4 data-localize="peopletargeted-trend-text">People targeted by appeal length (million)</h4>
           <div id="targeted-by-appeal"></div>
         </div>
       </div>
@@ -174,8 +165,7 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h4 data-localize="funding-trend-text">Crises by number of cumulative appeals</h4>
-            <p class="text-50">Data runs until 2016, which is the most recent year for which complete data was
-              available at the time of publication.</p>
+            <p class="text-50">Data runs until 2016, which is the most recent year for which complete data was available at the time of publication. To find out more details about each crisis, click on the country name. </p>
 
           </div>
         </div>
@@ -208,10 +198,12 @@
             <!-- Country lists goes here -->
           </tbody>
         </table>
+        
         <p class="sources" id="overview-source" data-localize="overview_sources"><span>Powered by <a  aria-label="HDX"  href="https://data.humdata.org/dataset/world-humanitarian-data-and-trends"
               target="_blank"><img alt="HDX logo"src="src/img/HDX-logo-home.svg" class="hdx"></a></span><br>To find out more about
           the state of current crises, visit <i>Humanitarian Insights</i> (<a href="https://www.hpc.tools/" target="_blank">https://www.hpc.tools/</a>)</p>
       </div>
+      <button class="button btn btn-primary">show more</button>
   </section>
 
 
@@ -224,10 +216,8 @@
           <div class="row">
             <div class="col-lg-8 mx-auto ">
               <h2 class="text mb-4">Impact of protracted crises</h2>
-              <p class="text-50">Protracted crises, often driven by intractable conflict, have consequences that affect
-                entire communities and put basic services in jeopardy. International humanitarian law prohibits the
-                targeting of civilian objects, emphasizing the importance of schools and hospitals to the civilian
-                population, especially children. However, these facilities continue to be targeted during conflicts.
+              <p class="text-50">Protracted crises, often driven by intractable conflict, have consequences that affect entire communities and put basic services in jeopardy. International humanitarian law prohibits the targeting of civilian objects, emphasizing the importance of schools and hospitals to the civilian population, especially children. However, these facilities continue to be targeted during conflicts.
+
               </p>
             </div>
           </div>
@@ -247,11 +237,9 @@
               <div class="container ">
               <div class="col-md-10 col-lg-8 mx-auto text-center sub-section">
                 <h3 class="text mb-4">Protection of healthcare <br>facilities</h3>
-                <p class="text-black-50">Protection of healthcare workers and facilities in armed conflict is a
-                    tenet of international humanitarian law and the focus of Security Council resolution 2286. Yet,
-                    healthcare workers were the victims of more than 700 targeted attacks in 2017 --and potentially
-                    many more that went unreported. Attacks were concentrated in the Middle East and Africa, with
-                    Afghanistan (66), occupied Palestinian territory (93) and Syria (252) recording the most incidents.
+                <p class="text-black-50">Protection of health-care workers and facilities in armed conflict is a tenet of international humanitarian law and the focus of Security Council resolution 2286. Yet, health-care workers were the victims of more than 700 targeted attacks in 2017 – and potentially many more that went unreported. Attacks were concentrated in the Middle East and Africa, with Afghanistan (66), occupied Palestinian tTerritory (93) and Syria (252) recording the most incidents.
+
+
                 </p>
 
               </div>
@@ -263,7 +251,7 @@
               <img alt="Attack on education" src="src/img/attack_health01.png" class="img-fluid">             
             </div>            
             <div class="container">
-                <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/downloads/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download (PDF)</a></span></p>
+                <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/downloads/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></span></p>
             </div>
           </div>
         </div>
@@ -275,12 +263,10 @@
               <div class="container ">
                 <div class="col-md-10 col-lg-8 mx-auto text-center sub-section">
                   <h3 class="text mb-4">Attacks on Education</h3>
-                  <p class="text-black-50">In 2017, the United Nations verified 188 incidents of military use of schools,
-                    both by
-                    government forces and rebel groups. In Syria alone, since the onset of the conflict in 2011, the
-                    protracted crisis has resulted in severe consequences. By May 2018, more than 2 million children
-                    between the ages of 5 and 17 were out of school, while more than 180,000 education personnel,
-                    including teachers, have abandoned school sites and classrooms.
+                  <p class="text-black-50">In 2017, the United Nations verified 188 incidents of military use of schools, both by
+                      government forces and rebel groups. In Syria alone, since the onset of the conflict in 2011, the protracted crisis has resulted in severe consequences.
+                      By May 2018, more than 2 million children between the ages of 5 and 17 were out of school, while more than 180,000 education personnel, including teachers, have abandoned school sites and classrooms.
+
                   </p>
   
                 </div>
@@ -319,8 +305,7 @@
           <div class="row">
             <div class="col-lg-8 mx-auto ">
               <h2 class="text mb-4">Opportunities for improving action</h2>
-              <p class="text-50">In the face of protracted crises, humanitarians are moving towards working closer
-                together with development and other partners, to address root causes of vulnerability. </p>
+              <p class="text-50">In the face of protracted crises, humanitarians are moving towards working closer together with development and other partners, to address root causes of vulnerability.</p>
             </div>
           </div>
         </div>
@@ -330,8 +315,7 @@
           <div class="wrapper"></div>
           <div class="photo-caption">
             <div class="">
-              <p data-localize="ataglance_photocaption">Camp C, Pulka, Gwoza LGA, Borno State, Nigeria. Ongoing
-                construction of 700 NHF-funded IOM shelters.</p>
+              <p data-localize="ataglance_photocaption">Nigeria: Construction of 700 shelters for IDPs in Pulka, with support from the Nigeria Humanitarian Fund.</p>
             </div>
           </div>
         </div>
@@ -342,27 +326,29 @@
             <div class="col-lg-8 mx-auto ">
               <h3 class="text mb-4">Strengthening local action through <br>country-based pooled funds <br>(CBPFs)
               </h3>
-              <p class="text-50">CBPFs play a valuable role in supporting the localization of humanitarian assistance
-                and aid delivery by directing funding to national NGOs that may have more familiarity with
-                on-the-ground conditions. In 2017, CBPFs funded 1,288 projects implemented by 657 partners. Allocations
-                to local partners have generally increased. In the Democratic Republic of Congo, the share of funding
-                to national NGOs rose from 21 per cent in 2016 to 38 per cent in 2017. However, overall contributions
-                to CBPFs still fall short of the target set under the Grand Bargain, which envisions 15 per cent of
-                humanitarian requirements to be channelled through CBPFs. Reaching this target would allow CBPFs to be
-                even more effective in distributing funds to the best-placed responder.
+              <p class="text-50">CBPFs play a valuable role in supporting the localization of humanitarian assistance and aid delivery by directing funding to national NGOs that may have more familiarity with on-the-ground conditions. In 2017, CBPFs funded 1,288 projects implemented by 657 partners. Allocations to local partners have generally increased. In the Democratic Republic of Congo, the share of funding to national NGOs rose from 21 per cent in 2016 to 38 per cent in 2017. However, overall contributions to CBPFs still fall short of the target set under the Grand Bargain, which envisions 15 per cent of humanitarian requirements to be channelled through CBPFs. Reaching this target would allow CBPFs to be even more effective in distributing funds to the best-placed responder.
               </p>
             </div>
           </div>
         </div>
       </div>
       <div class="row justify-content-center no-gutters">
+          <div class="col1 order-lg-first">
+            <img alt="Attack on education" src="src/img/number-of-partners.png" class="img-fluid">             
+          </div>            
+          <div class="container">
+              <p class="caption text-right" id="overview-source" data-localize="overview_sources"><span><a href="src/downloads/attacks_on_healthcare.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></span></p>
+          </div>
+        </div>
+<!--
+      <div class="row justify-content-center no-gutters">
         <div class="col-lg-6">
-          <img alt="Strengthening local action" class="img-fluid" src="src/img/cbpf01.jpg" alt="">
+          <img alt="Strengthening local action" class="img-fluid" src="src/img/number-of-partners.png" alt="">
         </div>
         <div class="col-lg-6 order-lg-first">
           <img alt="Strengthening local action" class="img-fluid" src="src/img/cbpf02.jpg" alt="">
         </div>
-      </div>
+      </div>-->
     </div>
   </section>
 
@@ -374,12 +360,8 @@
           <div class="row">
             <div class="col-lg-8 mx-auto ">
               <h3 class="text mb-4">Using Artificial Intelligence to <br>Track Displacement </h3>
-              <p class="text-50">The global picture on internal displacement is currently incomplete. Not all incidents
-                of internal displacement are reported and only some of the figures can be verified. New tools are
-                emerging to bolster collection and verification efforts.One example is the Internal Displacement Event
-                Tagging and Clustering Tool (IDETECT) – this tool mines huge news data sets, and through natural
-                language processing and machine learning algorithms, it classifies reports by type of displacement,
-                while also extracting information about location and the number of people displaced in real time.
+              <p class="text-50">The global picture on internal displacement is currently incomplete. Not all incidents of internal displacement are reported and only some of the figures can be verified. New tools are emerging to bolster collection and verification efforts.One example is the Internal Displacement Event Tagging and Clustering Tool (IDETECT) – this tool mines huge news data sets, and through natural language processing and machine learning algorithms, it classifies reports by type of displacement, while also extracting information about location and the number of people displaced in real time. 
+
               </p>
             </div>
           </div>
@@ -401,17 +383,15 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <p class="text-50">The timelines below illustrate the ow of displacement facts captured through IDETECT,
-                validated and cross-checked against events that took place in Nigeria through 2017.</p>
+              <p class="text-50">The timelines below illustrate the flow of displacement facts captured through IDETECT, validated and cross-checked against events that took place in Nigeria through 2017.</p>
               
             </div>
           </div>
           <div class="row">
               <div class="col1 mx-auto">
               <img alt="Timeline Image" src="src/img/timeline01.png" class="img-fluid">
-              <p class="caption_no_border text-right"><a href="src/downloads/idetect-nigeria.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Download (PDF)</a></p>
-              <p class="sources">To find out more about the current humanitarian response in Nigeria, visit Humanitarian
-                  Insights <a href="https://www.hpc.tools/plan/642" target="_blank">https://www.hpc.tools/plan/642</a></p>
+              <p class="caption_no_border text-right"><a href="src/downloads/idetect-nigeria.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Read full figure here (PDF)</a></p>
+              <p class="sources">To find out more about the current humanitarian response in Nigeria, visit Humanitarian Insights <a href="https://www.hpc.tools/plan/642" target="_blank">https://www.hpc.tools/plan/642</a></p>
               </div>
           </div>
           <div class="row">
@@ -634,6 +614,9 @@
 
   <!-- D3 -->
   <script src="src/js/d3.min.js"></script>
+
+  <!-- C3 -->
+  <script src="src/js/c3.min.js"></script>
 
   <!-- Crossfilter -->
   <script src="src/js/crossfilter.v1.min.js"></script>
@@ -991,6 +974,8 @@
         return d['#country+name'];
       });
       crisesGroup = crisesDim.group().reduceCount().all();     
+     
+    console.log(crisesGroup);
       html = '';
       for (i = 0; i < crisesGroup.length; i++) {
         html += '<tr id="" class="country-row">' +
@@ -1051,6 +1036,10 @@
             /[-\/\\^$*+?.()|[\]{}]/g, "") + '" ></div>' +
           '</div>' +
           '</div>' +
+          '<div class="col-md-12">' +
+              'To explore more indicators, click <a href="https://data.humdata.org/visualization/hdx-whdt-2018/" target="_blank">here</a>'+
+          '</div>'+
+         
           '<button class="btn btn-primary" data-dismiss="modal" type="button">' +
           '<i class="fas fa-times"></i>' +
           'Close</button>' +
@@ -1116,6 +1105,7 @@
     function drawDetailChart(chartType, data, renderIt) {
       let targeted = [],
         dates = [],
+        
         fundingReq = [],
         fundingReceiv = [],
         lengthCrisis = [],
@@ -1125,6 +1115,7 @@
 
       for (d in data) {
         dates.push(Number(data[d]['#date+year']));
+   
         targeted.push(Number(data[d]['#inneed+targeted']));
         fundingReq.push(Number(data[d]['#funding+requirements']));
         fundingReceiv.push(Number(data[d]['#funding+received']));
@@ -1191,7 +1182,9 @@
           values: mortality
         }]
       }
-
+      var formatFundings = function (d) {
+          return d3.format(',.2s')(d).replace('G', 'B');
+      };
 
       $('#modal-' + renderIt).on('shown.bs.modal', function (e) {
         const country_targeted_charts = new frappe.Chart("#chart-targeted-" + renderIt, { // or a DOM element,          
@@ -1203,40 +1196,85 @@
             formatTooltipX: d => (d + '').toUpperCase(),
             formatTooltipY: d => nFormatter(d),
           },
-          colors: ["#FA575C", "#0F6FB5"],
+          colors: ["#FA575C", "#0F6FB5", "#0F6FB5"],
           barOptions: {
             stacked: 0
           }
         });
 
-        const country_funding_chart = new frappe.Chart("#chart-funding-" + renderIt, { // or a DOM element,          
-          title: "",
-          data: data_funding,
-          type: 'axis-mixed', // or 'bar', 'line', 'scatter', 'pie', 'percentage'
-          height: 350,
-          colors: ["#758D91", "#FA575C", '#0F6FB5'],
-          tooltipOptions: {
-            formatTooltipX: d => (d + '').toUpperCase(),
-            formatTooltipY: d => nFormatter(d),
-          },
-          lineOptions: {
-            dotSize: 8
-          },
-          barOptions: {
-            stacked: 1
-          },
-          yAxis: [{
-              id: 'left-axis',
-              position: 'left',
-              unit: 4,
+        var funding_chart_country = c3.generate({
+        bindto: '#chart-funding-'+renderIt,
+        size: {
+            height: 370
+        },
+        color: {
+            pattern: ["#FA575C", "#0F6FB5","#000000"]
+        },
+        data: {
+          x: 'x',
+            columns: [date, fundingReq, fundingReceiv, lengthCrisis],
+            axes: {
+                'Consecutive length of appeals': 'y2'
             },
-            {
-              id: 'right-axis',
-              position: 'right',
-              count: 4,
+            types: {
+                'Funding requested': 'bar',
+                'Funding received': 'bar'
+            },
+            groups: [
+                ['Funding requested', 'Funding received']
+            ]
+        },
+        axis: {
+            x: {
+                tick: {
+                    centered: true,
+                    outer: false
+                }
+            },
+            y: {
+                label: {
+                    text: 'US$ million',
+                },
+                tick: {
+                    count: 4,
+                    format: formatFundings,
+                },
+                show: true,
+                padding: {
+                    bottom: 0
+                }
+            },
+            y2: {
+                tick: {
+                    count: 4,
+                    values:[2,5,8,12]
+
+                },
+                show: true,
+                padding: {
+                    bottom: 0
+                },
+                min: 0
             }
-          ],
-        });
+        },
+        legend: { hide: false },
+        padding: {bottom: 10, top: 10}
+        // tooltip:{
+        //     format: {
+        //         value: function(value, ratio, id ){
+        //             var format = (id === 'Funding requested' || id === 'Funding received') ? formatMillion : d3.format("d");
+        //             return format(value);
+        //         }
+        //     }
+        // }
+
+    });
+
+
+
+
+
+
 
         const country_people_concern_charts = new frappe.Chart("#chart-people-concern-" + renderIt, { // or a DOM element,
           title: "",
@@ -1314,6 +1352,30 @@
       }
 
     }
+  </script>
+  <script>
+        var defaultHeight = 410;
+        var text = $("#funding-tables");
+        var textHeight = text[0].scrollHeight;
+        var button = $(".button");
+        text.css({"max-height": defaultHeight, "overflow": "hidden"});
+
+        button.on("click", function(){
+        var newHeight = 0;
+        if (text.hasClass("active")) {
+          newHeight = defaultHeight;
+          text.removeClass("active");
+          $(".button").text("Show More");
+        } else {
+          newHeight = textHeight;
+          text.addClass("active");
+          $(".button").text("Show Less");
+        }
+        text.animate({
+        "max-height": newHeight
+        }, 500);
+        console.log(newHeight);
+        });
   </script>
 
 </body>
