@@ -978,7 +978,14 @@
       crisesDim = cf.dimension(function (d) {
         return d['#country+name'];
       });
-      crisesGroup = crisesDim.group().reduceCount().all();     
+
+      crisesGroup = crisesDim.group().reduceSum(function(d){
+        return d['#indicator+consecutive+length_crisis'];
+    }).all();
+//    crisesGroup = crisesDim.group().reduceCount();
+
+
+      //crisesGroup = crisesDim.group().reduceCount().all();     
      
     //console.log(crisesGroup);
       html = '';
@@ -1228,6 +1235,7 @@
               id: 'right-axis',
               position: 'right',
               count: 4,
+              values:[2,5,8,12]
             }
           ],
         });
