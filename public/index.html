@@ -14,7 +14,8 @@
   <link href="src/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700,700i|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto+Slab:100,300,400,700|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
     rel="stylesheet">
-
+  
+  <link href="src/css/c3.css" rel="stylesheet">
 
   <!-- Custom styles  -->
   <link href="src/css/slider.css" rel="stylesheet">
@@ -62,7 +63,7 @@
 
   <!-- Header -->
   <header class="header">
-      <div class="screen" style="position:absolute; width:100%; height:100%; z-index:100	; background:rgba(0,0,0,0.5); background-blend-mode:multiply;"></div>
+      <div class="screen" style="position:absolute; width:100%; height:100%; z-index:100	; background:rgba(0,0,0,0.1); background-blend-mode:multiply;"></div>
     <ul class="cb-slideshow container">
       <li>
         <div class="container d-flex h-100 align-items-center">
@@ -626,8 +627,15 @@
   <!-- Crossfilter -->
   <script src="src/js/crossfilter.v1.min.js"></script>
 
+   <!-- C3 -->
+   <script src="src/js/c3.min.js"></script>
+
   <!-- Frappe Chart -->
   <script src="https://cdn.jsdelivr.net/npm/frappe-charts@1.1.0/dist/frappe-charts.min.iife.js"></script>
+
+  <!-- Numeral JS-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
 
   <!--Scroll Magic-->
   <script>
@@ -718,6 +726,12 @@
   <!-- The first four charts data comes from the spreadsheet found under the data folder -->
   <!-- The "Crises by number of cummulative appeals " section data comes from an api call from  https://proxy.hxlstandard.org/data.json?strip-headers=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1q8CtQ5WF0k9E6dYiPmYDTRysLmxFfRRJaFuxnDlzPT8%2Fedit%23gid%3D1471518527&force=on -->
   <script>
+
+    var formatYear = function(d){
+        return d3.format("")(d) + " years";
+    }
+
+
     d3.csv('src/data/crises_length.csv', function (crises) {
       var interAarr = [],
         avgLCArr = [],
@@ -755,6 +769,16 @@
         valuesOverPoints: 1,
         lineOptions: {
           dotSize: 8
+        },
+        tooltipOptions: {
+          
+           formatTooltipY: function(value, ratio, name){
+            var format = name === 'Average length of crisis' ? formatYear : d3.format("d");
+            //console.log(format(value));
+            return format(value);
+           }
+           
+           //d => numeral(d).format('0,0'),
         }
       })
     })
@@ -815,6 +839,10 @@
         colors: ["#FA575C", "#0F6FB5", "#DBDFD9", "#758D91"],
         barOptions: {
           stacked: 1
+        },
+        
+        tooltipOptions: {
+           formatTooltipY: d => numeral(d).format('0,0'),
         }
       })
     })
@@ -941,12 +969,20 @@
 
         barOptions: {
           stacked: 1
+        },
+        tooltipOptions: {
+           formatTooltipY: d => numeral(d).format('0,0'),
         }
       });
 
     })
   </script>
   <script>
+
+  
+
+
+
     var humdevCall = $.ajax({
       type: 'GET',
       url: 'https://proxy.hxlstandard.org/data.json?strip-headers=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1q8CtQ5WF0k9E6dYiPmYDTRysLmxFfRRJaFuxnDlzPT8%2Fedit%23gid%3D1471518527&force=on',
@@ -1018,7 +1054,7 @@
           '<div class="container-fluid mx-auto">' +
           '<div class="modal-body">' +
           '<div class="container-fluid">' +
-          '<h1 class="text mb-4 text-center">' + crisesGroup[i].key + '</h1>' +
+          '<h1 class="country text mb-4 text-center">' + crisesGroup[i].key + '</h1>' +
           '<div class="row">' +
           '<div class="col-md-4">' +
           '<h4 class="text-left">Funding</h4>' +
@@ -1113,19 +1149,24 @@
       }
       return num;
     }
-
+    var formatFundings = function (d) {
+        return d3.format(',.2s')(d).replace('G', 'B');
+    };
     function drawDetailChart(chartType, data, renderIt) {
       let targeted = [],
         dates = [],
-        fundingReq = [],
-        fundingReceiv = [],
-        lengthCrisis = [],
+        datee = ['x'],
+        fundingReq = ['Funding requested'],
+        fundingReceiv = ['Funding received'],
+
+        lengthCrisis = ['Consecutive length of appeals'],
         idmcIDPs = [],
         affDisaster = [],
         mortality = [];
 
       for (d in data) {
         dates.push(Number(data[d]['#date+year']));
+        datee.push(Number(data[d]['#date+year']));
         targeted.push(Number(data[d]['#inneed+targeted']));
         fundingReq.push(Number(data[d]['#funding+requirements']));
         fundingReceiv.push(Number(data[d]['#funding+received']));
@@ -1136,6 +1177,7 @@
       }
       // console.log(lengthCrisis);
       const data_funding = {
+        
         labels: dates,
         datasets: [{
             name: "Consecutive length of appeals",
@@ -1147,11 +1189,13 @@
             name: "Funding requested",
             chartType: "bar",
             values: fundingReq,
+            axisID: "left-axis",
           },
           {
             name: "Funding received",
             chartType: "bar",
             values: fundingReceiv,
+            axisID: "left-axis",
           }
 
         ]
@@ -1210,6 +1254,78 @@
           }
         });
 
+    var country_funding_chart = c3.generate({
+        bindto: "#chart-funding-" + renderIt,
+        size: {
+            height: 370
+        },
+        color: {
+            pattern: ["#FA575C", "#0F6FB5", "#758D91"]
+        },
+        data: {
+            x: 'x',
+            columns: [datee, fundingReq, fundingReceiv, lengthCrisis],
+            axes: {
+                'Consecutive length of appeals': 'y2'
+            },
+            types: {
+                'Funding requested': 'bar',
+                'Funding received': 'bar'
+            },
+            groups: [
+                ['Funding requested', 'Funding received']
+            ]
+        },
+        axis: {
+            x: {
+                tick: {
+                    centered: true,
+                    outer: false
+                }
+            },
+            y: {
+                label: {
+                    text: 'US$ million',
+                },
+                tick: {
+                    count: 4,
+                    format: formatFundings,
+                },
+                show: true,
+                padding: {
+                    bottom: 0
+                }
+            },
+            y2: {
+                tick: {
+                    count: 4,
+                    values:[2,5,8,12]
+
+                },
+                show: true,
+                padding: {
+                    bottom: 0
+                },
+                min: 0
+            }
+        },
+        legend: { hide: false },
+        padding: {bottom: 10, top: 10}
+        // tooltip:{
+        //     format: {
+        //         value: function(value, ratio, id ){
+        //             var format = (id === 'Funding requested' || id === 'Funding received') ? formatMillion : d3.format("d");
+        //             return format(value);
+        //         }
+        //     }
+        // }
+
+    });
+
+
+
+
+        /*
         const country_funding_chart = new frappe.Chart("#chart-funding-" + renderIt, { // or a DOM element,          
           title: "",
           data: data_funding,
@@ -1226,6 +1342,11 @@
           barOptions: {
             stacked: 1
           },
+          xAxis: [{
+            id: 'bottom-axis',
+            title: 'Time',
+            position: 'bottom'
+          }],
           yAxis: [{
               id: 'left-axis',
               position: 'left',
@@ -1239,6 +1360,9 @@
             }
           ],
         });
+
+
+        */
 
         const country_people_concern_charts = new frappe.Chart("#chart-people-concern-" + renderIt, { // or a DOM element,
           title: "",
@@ -1338,7 +1462,7 @@
         text.animate({
         "max-height": newHeight
         }, 500);
-        console.log(newHeight);
+        //console.log(newHeight);
         });
   </script>
 

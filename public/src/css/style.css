@@ -178,7 +178,7 @@ figure{
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.1);
     -webkit-transition: background-color 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
 
@@ -684,6 +684,16 @@ a:hover {
   text-decoration: none;
   color: #3c6360;
 }
+.country {
+  font-size: 35px;
+  line-height: 46px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FA575C;
+  font-family: 'Roboto Condensed',sans-serif;
+  padding-bottom: 40px;
+}
+
 h2 {
   font-size: 42px;
   line-height: 46px;
@@ -985,6 +995,8 @@ td.percentagefigure {
 #frappe-chart1 .chart-container .path-group path {
 	stroke-width:6px;
 }
+
+
 .hdx {
   width: 70px;
   display: inline;
