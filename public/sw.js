@@ -69,7 +69,11 @@ self.addEventListener('install', function (event) {
           '/src/reports/World_Humanitarian_Data_and_Trends_2016.pdf',  
           '/src/reports/World_Humanitarian_Data_and_Trends_2017.pdf', 
           '/src/resources/WHDT_2018_Global_Landscape_EN.pdf', 
-          '/src/resources/WHDT_2018_Highlights_EN.pdf',   
+          '/src/resources/WHDT_2018_Global_Landscape_FR.pdf',
+          '/src/resources/WHDT_2018_Global_Landscape_SP.pdf',
+          '/src/resources/WHDT_2018_Highlights_EN.pdf',  
+          '/src/resources/WHDT_2018_Highlights_FR.pdf', 
+          '/src/resources/WHDT_2018_Highlights_SP.pdf',  
            
           '/src/resources/attacks_on_healthcare.pdf', 
           '/src/resources/idetect-nigeria.pdf', 
