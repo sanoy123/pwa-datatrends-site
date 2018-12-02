@@ -186,13 +186,10 @@
 
               <td class="percentagebar">
                 <span style="float:left;" data-localize="funded_text">Number of Cumulative Appeals</span>
-                <span data-localize="notfunded_text">&nbsp;</span>
-                <div class="outerbar">
-                  <div class="innerbar" style="width:50%;"></div>
-                </div>
+                
               </td>
               <td class="percentagefigure">
-                <h3>#</h3>
+                <h3></h3>
               </td>
             </tr>
             <tr class="break-row">
@@ -206,7 +203,7 @@
           </tbody>
         </table>        
       </div>
-      <p class="sources scroll-fade-content" id="overview-source" data-localize="overview_sources">Powered by <a
+      <p class="sources" id="overview-source" data-localize="overview_sources">Powered by <a
         aria-label="HDX" href="https://data.humdata.org/dataset/world-humanitarian-data-and-trends" target="_blank"><img
           alt="HDX logo" src="src/img/HDX-logo-home.svg" class="hdx"></a><br>To find out more about
       the state of current crises, visit <i>Humanitarian Insights</i> <span class="footer-link">(<a href="https://www.hpc.tools/"
@@ -1090,9 +1087,9 @@
           '">' + crisesGroup[i].key + ' <i class="fas fa-bars"></i></a></td>' +
           '<td class="percentagebar">' +
           '<div class="outerbar">' +
-          '<div class="innerbar" style="width:' + crisesGroup[i].value + '%;"></div>' +
+          '<div class="innerbar" style="width:' + (crisesGroup[i].value * 4) + '%;"><strong>' + crisesGroup[i].value + '</strong></div>' +
           '</div>' +
-          '</td><td>&nbsp;<strong class="percent">' + crisesGroup[i].value + '</strong></td>' +
+          //'</td><td>&nbsp;<strong class="percent">' + crisesGroup[i].value + '</strong></td>' +
           '</tr>' +
           '<tr class="table-info">' +
           '<td colspan="3">' +
@@ -1506,7 +1503,7 @@
     }
   </script>
   <script>
-    var defaultHeight = 410;
+    var defaultHeight = 405;
     var text = $("#funding-tables");
     var textHeight = text[0].scrollHeight;
     var button = $(".button");
