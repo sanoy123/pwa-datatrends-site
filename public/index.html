@@ -531,6 +531,10 @@
     </div>
   </section>
 
+  <div id="iosMessage" align="center">
+    Install this webapp on your iPhone: tap and then Add to homescreen
+  </div>
+
   <!-- MODALS -->
 
   <!-- Highlights Modal -->
@@ -1528,6 +1532,32 @@
       }, 500);
       //console.log(newHeight);
     });
+  </script>
+
+  <script>
+  // Detects if device is on iOS 
+    const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test( userAgent );
+    }
+
+    console.log(isIos());
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    // Checks if should display install popup notification:
+    var ios_message = document.getElementById("iosMessage");
+    if (isIos() && !isInStandaloneMode()) {
+      ios_message.style.display = "block";
+    }
+    else {
+      ios_message.style.display="none";
+    }
+
+
+
+
+
   </script>
 
 </body>

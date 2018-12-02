@@ -1171,3 +1171,13 @@ h3 {
 #second_parallex {
   background: url('../img/attack-health02.jpg') center center / cover fixed no-repeat rgba(0, 0, 0, 1);
 }
+
+#iosMessage
+{
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:#063;
+  bottom:0px;
+  right:25%;
+}
