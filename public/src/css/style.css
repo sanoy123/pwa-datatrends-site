@@ -1176,7 +1176,13 @@ h3 {
 {
   position:absolute;
   width:100%;
-  height:100px;
-  background:#C9CDD5; 
-  color: #000;
+  height:50px;
+  background:#C6CCD3;
+  bottom:0px;
+  right:0px;
+  text-align: left;
+ 
+}
+#iosMessage img {
+  width: 100%;
 }
