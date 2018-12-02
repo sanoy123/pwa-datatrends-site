@@ -915,10 +915,12 @@ a.toggled {
   font-size: 26px;
   line-height: 20px;
 }
-
-td {
+#funding-tables td {
   padding: 5px;
   text-align: right;
+}
+.c3-tooltip td{
+  text-align: left !important;
 }
 .percent{
   text-align: left !important;
