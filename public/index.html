@@ -1549,6 +1549,9 @@
     var ios_message = document.getElementById("iosMessage");
     if (isIos() && !isInStandaloneMode()) {
       ios_message.style.display = "block";
+      setTimeout(function() {
+        $('#iosMessage').hide()
+      }, 5000);
     }
     else {
       ios_message.style.display="none";
