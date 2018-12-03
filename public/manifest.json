@@ -1,9 +1,9 @@
 {
-  "name": "World Humanitarian Data and Trends 2018",
+  "name": "World Humanitarian Data \u0026 Trends 2018",
   "short_name": "WHDT 2018",
   "theme_color": "#fa575c",
   "background_color": "#fa575c",
-  "display": "browser",
+  "display": "standalone",
   "Scope": "/",
   "start_url": "/",
   "icons": [
