@@ -1,5 +1,5 @@
 // Set a name for the current cache
-var cacheName = 'v1.0'; 
+var cacheName = 'v1.01'; 
 
 // Default files to always cache
 var cacheFiles = [
@@ -18,6 +18,8 @@ var cacheFiles = [
           './src/reports/World_Humanitarian_Data_and_Trends_2015.pdf',  
           './src/reports/World_Humanitarian_Data_and_Trends_2016.pdf', 
           './src/reports/World_Humanitarian_Data_and_Trends_2017.pdf', 
+          './src/reports/WHDT2018_web_final_singles.pdf', 
+          './src/reports/WHDT2018_web_final_spread.pdf', 
           './src/resources/attacks_on_healthcare.pdf', 
           './src/resources/idetect-nigeria.pdf', 
           './src/img/ai01.jpg',
