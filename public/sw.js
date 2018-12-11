@@ -1,5 +1,5 @@
 // Set a name for the current cache
-var cacheName = 'v1.01'; 
+var cacheName = 'v1.0'; 
 
 // Default files to always cache
 var cacheFiles = [
@@ -60,6 +60,14 @@ var cacheFiles = [
           './src/reports/WHDT_2018_Highlights_SP.pdf',    
           './src/data/crises_length.csv',
           './src/data/data.csv',
+          'https://www.unocha.org/sites/unocha/files/WHDT2018_web_final_singles.pdf', 
+          'https://www.unocha.org/sites/unocha/files/WHDT2018_web_final_spread.pdf', 
+          'https://www.unocha.org/sites/unocha/files/WHDT_2018%20Global%20Landscape_29%20Nov.pdf',
+          'https://www.unocha.org/sites/unocha/files/WHDT_2018%20Highlights_29%20Nov.pdf',
+          'https://www.unocha.org/sites/unocha/files/WHDT2018%20Global%20Landscape%20FRENCH_30%20Nov.pdf',
+          'https://www.unocha.org/sites/unocha/files/WHDT2018%20Global%20Landscape%20SPANISH_30%20Nov.pdf',
+          'https://www.unocha.org/sites/unocha/files/WHDT2018%20Highlights%20FRENCH_2%20Dec.pdf',
+          'https://www.unocha.org/sites/unocha/files/WHDT2018%20Highlights%20SPANISH_1%20Dec.pdf',
           'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js',
           'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js',
           'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js',

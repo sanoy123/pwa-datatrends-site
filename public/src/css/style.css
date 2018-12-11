@@ -1190,3 +1190,7 @@ h3 {
 #iosMessage img {
   width: 100%;
 }
+
+.navbar-nav a{
+  font-size: 18px !important;
+}
