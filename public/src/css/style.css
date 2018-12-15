@@ -181,7 +181,7 @@ figure {
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: none;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(250, 87, 92, 0.7);
     -webkit-transition: background-color 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
 

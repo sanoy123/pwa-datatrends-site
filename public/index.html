@@ -169,6 +169,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col1 mx-auto scroll-fade-content">
+            <a name="showLess"></a>
             <h4 data-localize="funding-trend-text">Crises by number of cumulative appeals</h4>
             <p class="text-50">Data runs until 2016, which is the most recent year for which complete data was
               available at the time of publication. To find out more details about each crisis, click on the country
@@ -1556,12 +1557,17 @@
         $(".button").text("Show More");
       } else {
         newHeight = textHeight;
+        //
         text.addClass("active");
+        
         $(".button").text("Show Less");
+        
       }
+     
       text.animate({
-        "max-height": newHeight
+        "max-height": newHeight,
       }, 500);
+      //window.location = 'index.html#showLess';
       //console.log(newHeight);
     });
   </script>
