@@ -1,4 +1,4 @@
-# Progressive Web App (with ServiceWorker)" 
+# Progressive Web App (with ServiceWorker)
 
 
 ## Installation
